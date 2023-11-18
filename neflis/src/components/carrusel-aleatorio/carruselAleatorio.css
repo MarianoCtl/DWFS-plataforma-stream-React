@@ -1,0 +1,150 @@
+.contenedor-carrusel{
+    color: white;
+    margin: 20px 20px 20px;
+    padding: 10px;
+    border: 1px solid #1d1f22;
+    border-radius: 5px;
+    background-color: #212529;
+}
+
+.mySlides {
+  display: none
+}
+
+.visible {
+    display: block;
+}
+
+.oculto {
+    display: none;
+}
+
+img {
+  vertical-align: middle; 
+  width: 300px; 
+  height: 300px;
+}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1920px;
+  position: relative;
+  margin: auto;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+.d-flex {
+  display: flex;
+}
+
+/* Título */
+.titulo {
+  color: #f2f2f2;
+  font-size: 2.2vw;
+  font-weight: bolder;
+  padding-left: 12px;
+  width: 100%;
+  text-align: left;
+}
+
+/* Sipnosis */
+.sipnosis {
+  color: #f2f2f2;
+  font-size: 1.2vw;
+  padding-left: 12px;
+  width: 100%;
+  text-align: left;
+}
+
+/* Tipo de contenido */
+.tipo {
+  color: #f2f2f2;
+  font-size: 1vw;
+  font-weight: bolder;
+  margin-top: 20px;
+  padding-left: 12px;
+  width: 100%;
+  text-align: left;
+}
+
+.btn-ver{
+  margin-top: 20px;
+  margin-left: 12px;
+  background-color:#82bcca;
+	border-radius:5px;
+	border:1px solid #2e4679;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-size:15px;
+	font-weight:bold;
+	padding:10px 30px;
+	text-decoration:none;
+	text-shadow:0px -1px 0px #5b6178;
+}
+.btn-ver:hover {
+	background-color:#4b8aa5;
+}
+.btn-ver:active {
+	position:relative;
+	top:1px;
+}
+
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .prev, .next,.text {font-size: 11px}
+}
