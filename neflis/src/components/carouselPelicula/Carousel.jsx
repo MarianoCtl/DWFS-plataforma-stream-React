@@ -21,7 +21,6 @@ const Carousel=()=>{
         if (dato.length > 0 ) {
             //Filtra si corresponde a películas y series o solo a una
             let datosFiltrados =  dato.filter(elemento => elemento.tipo === "pelicula");
-            
             // Mezcla los datos
             const datosMezclados = datosFiltrados.sort(() => Math.random() - 0.5);
             // Selecciona los primeros 3 elementos
