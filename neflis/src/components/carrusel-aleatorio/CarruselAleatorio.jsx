@@ -75,10 +75,12 @@ function CarruselAleatorio({ tipo }) {
                 {elementosAleatorios.map((elemento, index) => (
                     <div key={index} className="mySlides fade">
                         <div className='d-flex'>
-                            <img src={elemento.imagen} alt={`portada de ${elemento.titulo}`} />
-                            <div>
+                            <div className='contenedor-img'>
+                                <img className='media-img' src={elemento.imagen} alt={`portada de ${elemento.titulo}`} />
+                            </div>
+                            <div className='contenedor-info'>
                                 <div className="titulo">{elemento.titulo}</div>
-                                <div className="sipnosis">{elemento.sipnosis}</div>
+                                <div className="sinopsis">{elemento.sipnosis}</div>
                                 <div className="tipo">{elemento.tipo.toUpperCase()}</div>
                                 <button className='btn-ver sombra'>Ver</button>
                             </div>
