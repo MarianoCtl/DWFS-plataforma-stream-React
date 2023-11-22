@@ -11,7 +11,7 @@ const Carousel=()=>{
         obtenerDatos();
     },[])//se deja ",[]" para que se ejecute una vez
     const obtenerDatos=async()=>{
-        const data=await fetch("https://6556206a84b36e3a431f1fb4.mockapi.io/media");
+        const data=await fetch("https://6557b12cbd4bcef8b613125f.mockapi.io/api/v1/peliculas");
         const jsonData=await data.json();
         //console.log(peliculas);
         setDato(jsonData);
@@ -21,10 +21,8 @@ const Carousel=()=>{
         if (dato.length > 0 ) {
             //Filtra si corresponde a películas y series o solo a una
             let datosFiltrados =  dato.filter(elemento => elemento.tipo === "pelicula");
-            // Mezcla los datos
-            const datosMezclados = datosFiltrados.sort(() => Math.random() - 0.5);
             // Selecciona los primeros 3 elementos
-            const veinteElementos = datosMezclados.slice(0, 20);
+            const veinteElementos = datosFiltrados.slice(0,18);
 
             setElementosAleatorios(veinteElementos);
             console.log(elementosAleatorios)
