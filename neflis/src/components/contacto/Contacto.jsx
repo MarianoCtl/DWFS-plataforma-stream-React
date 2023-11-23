@@ -12,40 +12,30 @@ const [values, setValues] = useState({
     nombre:'',
     mail:'',
     telefono:'',
-    consulta:'',
-    
+    consulta:'',    
 });
-
 
 //Manejar el evento al cambiar los inputs
 const handleChange = (e) => {
     const { name, value } = e.target
-    setValues({ ...values, [name]: value })
-    
+    setValues({ ...values, [name]: value })    
 }
 
 //setear a cadena vacia los inputs luego del envio del formulario
 const handleSubmit = (e) => {
-    e.preventDefault()
-    
-    
-    setValues({
-        nombre:'',
-        mail:'',
-        telefono:'',
-        consulta:'',
-        fecha:''
-    })
-    
+    e.preventDefault()   
 }
 
 const[respuesta, setRespuesta]= useState('');
+const[respuestaValida, setRespuestaValida] = useState(true);
+const claseDeP = respuestaValida ? 'respuesta' : 'respuesta-amarilla';
 
 const responder = ()=>{
     setRespuesta('Gracias por contactarte con nosotros, a la brevedad estaremos respondiendo')
+    setRespuestaValida(true);
     setTimeout(()=>{
         setRespuesta('')
-    },3000);
+    },10000);
 }
 
 const[controlNombre, setControlNombre]= useState('');
@@ -64,8 +54,7 @@ const controlarNombre = ()=>{
 //controlar si no se ingresa un mail y solicitar en ese caso ingrese un celular
 const controlarEmail = ()=>{
     if(values.mail === ''){
-        setControlCelular('No ingreso email,debe ingresar un numero de celular')
-        
+        setControlCelular('No ingreso email,debe ingresar un numero de celular')        
     }
 }
 
@@ -103,6 +92,7 @@ let datosConFecha = []
         ...values,
         fecha: fechaActual.toLocaleString(),
       };
+    
     if (datosConFecha.nombre && (datosConFecha.mail || datosConFecha.telefono) && datosConFecha.consulta) {
     try {
       const respuestaApi = await fetch(url, {
@@ -120,23 +110,23 @@ let datosConFecha = []
         console.log(resultado);
         responder();
         limpiarPlaceHolder();
-
-      
-
-      
+        setValues({
+            nombre:'',
+            mail:'',
+            telefono:'',
+            consulta:'',
+            fecha:''
+        })              
     } catch (error) {
       console.error('Error al enviar datos a la API:', error);
       // Manejar el error si es necesario
       setRespuesta('Error al enviar datos a la API.');
     }
   }else{
-    setRespuesta('Debe completar nombre, mensaje y celular o email')
+    setRespuesta('Debe completar nombre, mensaje y celular o email');
+    setRespuestaValida(false);
   }
 };
-
-  
-
-
   return (
     <div className='contiene-form-registro'>
         <form className='contiene-registro' onSubmit={handleSubmit}>
@@ -146,33 +136,32 @@ let datosConFecha = []
             </div>
             
             <div className='contiene-input'>
-                <label className='label' for='nombre' >Nombre</label>
-                <input type="text" name="nombre" id="nombre" className='input' value={values.nombre} onChange={handleChange} placeholder={controlNombre} onBlur={controlarNombre} onFocus={limpiarRespuesta}  />
+                <label className='etiqueta' for='nombre' >Nombre</label>
+                <input type="text" name="nombre" id="nombre" className='ingresoDatos' value={values.nombre} onChange={handleChange} placeholder={controlNombre} onBlur={controlarNombre} onFocus={limpiarRespuesta}  />
             </div>            
 
             <div className='contiene-input'>
-                <label className='label' for='mail' >Email</label>
-                <input type='email' name="mail" id="email" className='input' value={values.mail} onChange={handleChange} placeholder={controlEmail} onBlur={controlarEmail}   />
+                <label className='etiqueta' for='mail' >Email</label>
+                <input type='email' name="mail" id="email" className='ingresoDatos' value={values.mail} onChange={handleChange} placeholder={controlEmail} onBlur={controlarEmail}   />
             </div>
 
             <div className='contiene-input'>
-                <label className='label' for='celular' >Celular</label>
-                <input type='text' name="telefono" id="" className='input' value={values.telefono} onChange={handleChange} placeholder={controlCelular} onBlur={controlarCelular}   />
+                <label className='etiqueta' for='celular' >Celular</label>
+                <input type='text' name="telefono" id="" className='ingresoDatos' value={values.telefono} onChange={handleChange} placeholder={controlCelular} onBlur={controlarCelular}   />
             </div>
             
             <div className='contiene-input'>
-                <label className='label' for='consulta' >Mensaje</label>
-                <textarea name="consulta" className='input' id="mensaje" cols="30" rows="10" value={values.consulta} onChange={handleChange} placeholder={controlConsulta} onBlur={controlarConsulta}></textarea>                
+                <label className='etiqueta' for='consulta' >Mensaje</label>
+                <textarea name="consulta" className='ingresoDatos' id="mensaje" cols="30" rows="10" value={values.consulta} onChange={handleChange} placeholder={controlConsulta} onBlur={controlarConsulta}></textarea>                
             </div>
 
             <div className='contiene-btnEnviar'>
                 <button className='btnEnviar' onClick={enviarDatosAPI}>Enviar</button>
                 <button className='btnEnviar'  >Salir</button>
             </div>
-            <p className='respuesta'>{respuesta}</p>            
+            <p className={claseDeP}>{respuesta}</p>        
 
         </form>
-
     </div>
   )
 }
