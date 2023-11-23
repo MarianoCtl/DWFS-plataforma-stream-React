@@ -1,8 +1,8 @@
 import React from 'react'
 
-function Reproductor() {
+function ReproductorPage() {
   return (
     <div>Reproductor </div>
   )
 }
-export default Reproductor
+export default ReproductorPage

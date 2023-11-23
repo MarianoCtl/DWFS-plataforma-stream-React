@@ -1,8 +1,8 @@
 import React from 'react'
 
-function Inicio() {
+function InicioPage() {
   return (
     <div>inicio </div>
   )
 }
-export default Inicio;
+export default InicioPage;

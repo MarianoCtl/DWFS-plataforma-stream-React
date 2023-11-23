@@ -1,8 +1,8 @@
 import React from 'react'
 
-function Registro() {
+function RegistroPage() {
   return (
     <div>Registro </div>
   )
 }
-export default Registro
+export default RegistroPage

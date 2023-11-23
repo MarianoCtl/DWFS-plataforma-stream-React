@@ -1,8 +1,8 @@
 import React from 'react'
 
-function SobreNosotros() {
+function SobreNosotrosPage() {
   return (
     <div>Sobre-nosotros </div>
   )
 }
-export default SobreNosotros
+export default SobreNosotrosPage

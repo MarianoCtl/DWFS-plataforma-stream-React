@@ -1,8 +1,8 @@
 import React from 'react'
 
-function Ingresar() {
+function IngresarPage() {
   return (
     <div>Ingresar </div>
   )
 }
-export default Ingresar
+export default IngresarPage

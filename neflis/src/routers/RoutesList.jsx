@@ -1,30 +1,29 @@
 import React from 'react'
-import { BrowserRouter,Routes,Route } from 'react-router-dom';
-import Inicio from '../pages/inicio/Inicio'
-import Peliculas from '../pages/peliculas/Peliculas'
-import Buscar from '../pages/buscar/Buscar'
-import Contacto from '../pages/contacto/Contacto'
-import Ingresar from '../pages/ingresar/Ingresar'
-import Registro from '../pages/registro/Registro'
-import Reproductor from '../pages/reproductor/Reproductor'
-import Series from '../pages/series/Series'
-import SobreNosotros from '../pages/sobre-nosotros/SobreNosotros'
+import {Routes,Route} from 'react-router-dom';
+
+import InicioPage from '../pages/inicio/InicioPage'
+import PeliculasPage from '../pages/peliculas/PeliculasPage'
+import BuscarPage from '../pages/buscar/BuscarPage'
+import ContactoPage from '../pages/contacto/ContactoPage'
+import IngresarPage from '../pages/ingresar/IngresarPage'
+import RegistroPage from '../pages/registro/RegistroPage'
+import ReproductorPage from '../pages/reproductor/ReproductorPage'
+import SeriesPage from '../pages/series/SeriesPage'
+import SobreNosotrosPage from '../pages/sobre-nosotros/SobreNosotrosPage'
 function RoutesList() {
   return (
     <>
-    <BrowserRouter>
         <Routes>
-          <Route path='/' element={<Inicio/>}>Este es el inicio</Route>
-          <Route path='/peliculas' element={<Peliculas/>}>Este es el peliculas</Route>
-          <Route path='/buscar' element={<Buscar/>}>Este es el buscar</Route>
-          <Route path='/contacto' element={<Contacto/>}>Este es el peliculas</Route>
-          <Route path='/ingresar' element={<Ingresar/>}>Este es el inicio</Route>
-          <Route path='/registro' element={<Registro/>}>Este es el peliculas</Route>
-          <Route path='/reproductor' element={<Reproductor/>}>Este es el inicio</Route>
-          <Route path='/series' element={<Series/>}>Este es el peliculas</Route>
-          <Route path='/sobre-nosotros' element={<SobreNosotros/>}>Este es el inicio</Route>
+          <Route path='/' element={<InicioPage/>}>Este es el inicio</Route>
+          <Route path='/peliculas' element={<PeliculasPage/>}>Este es el peliculas</Route>
+          <Route path='/buscar' element={<BuscarPage/>}>Este es el buscar</Route>
+          <Route path='/contacto' element={<ContactoPage/>}>Este es el peliculas</Route>
+          <Route path='/ingresar' element={<IngresarPage/>}>Este es el inicio</Route>
+          <Route path='/registro' element={<RegistroPage/>}>Este es el peliculas</Route>
+          <Route path='/reproductor' element={<ReproductorPage/>}>Este es el inicio</Route>
+          <Route path='/series' element={<SeriesPage/>}>Este es el peliculas</Route>
+          <Route path='/sobre-nosotros' element={<SobreNosotrosPage/>}>Este es el inicio</Route>
         </Routes>
-      </BrowserRouter>
     </>
   )
 }

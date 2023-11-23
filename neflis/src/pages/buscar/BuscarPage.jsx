@@ -1,8 +1,8 @@
 import React from 'react'
 
-function Buscar() {
+function BuscarPage() {
   return (
     <div>Buscar </div>
   )
 }
-export default Buscar
+export default BuscarPage
