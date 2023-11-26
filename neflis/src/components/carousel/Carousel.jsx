@@ -1,15 +1,45 @@
 import React, { useState,useEffect } from 'react';
-import './carousel.css'; // Importa el archivo CSS para estilos
 import { Link } from 'react-router-dom';
-
-const Carousel = ({tipo}) => {
+import './carousel.css'
+const Carousel = ({tipo,genero}) => {
    
     const capitalizarPrimeraLetra=()=>{ 
         if(""+tipo!=='series'&&""+tipo!=='peliculas'){
-        return 'Series y Peliculas'
+            switch(genero){
+                case 1:
+                    return 'Series y Peliculas de Accion';
+                break;
+                case 2:
+                    return 'Series y Peliculas de Terror';
+                break;
+                case 3:
+                    return 'Series y Peliculas de Romance';
+                break;
+                 case 4:
+                    return 'Series y Peliculas de Comedia';
+                break;
+                default:     
+                  return 'Todas las Series y Peliculas';
+            }
         }
         const tipo1=""+tipo;
-        return tipo1.charAt(0).toUpperCase() + tipo1.slice(1);
+        const tipoCapitalizado= tipo1.charAt(0).toUpperCase() + tipo1.slice(1);
+        switch(genero){
+            case 1:
+            return `${tipoCapitalizado} de Accion`;
+        break;
+        case 2:
+            return `${tipoCapitalizado} de Terror`;
+        break;
+        case 3:
+            return `${tipoCapitalizado} de Romance`;
+        break;
+         case 4:
+            return `${tipoCapitalizado} de Comedia`;
+        break;
+        default:     
+          return `Todas las ${tipoCapitalizado}`;
+        }
     }
     
   const URL_API_media = "https://6556206a84b36e3a431f1fb4.mockapi.io/media";
@@ -40,11 +70,59 @@ const Carousel = ({tipo}) => {
         //Filtra si corresponde a películas y series o solo a una
         let datosFiltrados = movies;
         if (tipo === "peliculas") {
-            datosFiltrados = movies.filter(elemento => elemento.tipo === "pelicula");
-            console.log(datosFiltrados)
-        } else if (tipo === "series") {
-            datosFiltrados = movies.filter(elemento => elemento.tipo === "serie");
-            console.log(datosFiltrados)
+            let dato;
+            switch(genero){
+                case 1:
+                    dato = movies.filter(elemento => elemento.tipo === "pelicula");
+                    datosFiltrados = dato.filter(elemento => elemento.id_genero === genero);
+                    console.log(datosFiltrados)  
+                break;
+                case 2:
+                    dato = movies.filter(elemento => elemento.tipo === "pelicula");
+                    datosFiltrados = dato.filter(elemento => elemento.id_genero === genero);
+                    console.log(datosFiltrados)  
+                break;
+                case 3:
+                    dato = movies.filter(elemento => elemento.tipo === "pelicula");
+                    datosFiltrados = dato.filter(elemento => elemento.id_genero === genero);
+                    console.log(datosFiltrados)  
+                break;
+                case 4:
+                    dato = movies.filter(elemento => elemento.tipo === "pelicula");
+                    datosFiltrados = dato.filter(elemento => elemento.id_genero === genero);
+                    console.log(datosFiltrados)  
+                break;
+                default:
+                datosFiltrados = movies.filter(elemento => elemento.tipo === "pelicula");
+                console.log(datosFiltrados)
+            }
+        } else if (tipo === "series") { 
+            let dato;
+            switch(genero){
+                case 1:
+                    dato = movies.filter(elemento => elemento.tipo === "serie");
+                    datosFiltrados = dato.filter(elemento => elemento.id_genero === genero);
+                    console.log(datosFiltrados)  
+                break;
+                case 2:
+                    dato = movies.filter(elemento => elemento.tipo === "serie");
+                    datosFiltrados = dato.filter(elemento => elemento.id_genero === genero);
+                    console.log(datosFiltrados)  
+                break;
+                case 3:
+                    dato = movies.filter(elemento => elemento.tipo === "serie");
+                    datosFiltrados = dato.filter(elemento => elemento.id_genero === genero);
+                    console.log(datosFiltrados)  
+                break;
+                case 4:
+                    dato = movies.filter(elemento => elemento.tipo === "serie");
+                    datosFiltrados = dato.filter(elemento => elemento.id_genero === genero);
+                    console.log(datosFiltrados)  
+                break;
+                default:
+                datosFiltrados = movies.filter(elemento => elemento.tipo === "serie");
+                console.log(datosFiltrados)
+            }
         }
         // Mezcla los datos
         const datosMezclados = datosFiltrados.sort(() => Math.random() - 0.5);
