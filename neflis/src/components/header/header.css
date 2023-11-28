@@ -1,11 +1,10 @@
-.parent {
+.parentHeader {
     display: grid;
     grid-template-columns: 15% 55% 30%;
     grid-template-rows: 100%;
     grid-column-gap: 0px;
     grid-row-gap: 0px;
     background-color: #212529;
-    margin-bottom: 1%;
     box-shadow: 2px 5px 5px 0px rgba(46,70,121,0.75);
     }
 
