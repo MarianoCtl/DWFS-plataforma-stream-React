@@ -31,17 +31,17 @@ export default function ListaMedia({tipo, genero, textoBuscar, botonPlay, botonE
     
     if (tipo){
         if (genero){
-            mediaFiltrada = (media.filter(dato => ((dato.tipo===tipo)&&(dato.id_genero===genero))&&((dato.titulo.toLowerCase().includes(textoBuscar.toLowerCase()))||(dato.sipnosis.toLowerCase().includes(textoBuscar.toLowerCase())))));
+            mediaFiltrada = (media.filter(dato => ((dato.tipo===tipo)&&(dato.id_genero===genero))&&((dato.titulo.toLowerCase().includes(textoBuscar.toLowerCase()))||(dato.sinopsis.toLowerCase().includes(textoBuscar.toLowerCase())))));
         }else{
-            mediaFiltrada = (media.filter(dato => ((dato.tipo===tipo))&&((dato.titulo.toLowerCase().includes(textoBuscar.toLowerCase()))||(dato.sipnosis.toLowerCase().includes(textoBuscar.toLowerCase())))));
+            mediaFiltrada = (media.filter(dato => ((dato.tipo===tipo))&&((dato.titulo.toLowerCase().includes(textoBuscar.toLowerCase()))||(dato.sinopsis.toLowerCase().includes(textoBuscar.toLowerCase())))));
 
         }
         
     }else{
         if (genero){
-            mediaFiltrada = (media.filter(dato => ((dato.id_genero===genero))&&((dato.titulo.toLowerCase().includes(textoBuscar.toLowerCase()))||(dato.sipnosis.toLowerCase().includes(textoBuscar.toLowerCase())))));
+            mediaFiltrada = (media.filter(dato => ((dato.id_genero===genero))&&((dato.titulo.toLowerCase().includes(textoBuscar.toLowerCase()))||(dato.sinopsis.toLowerCase().includes(textoBuscar.toLowerCase())))));
         }else{
-            mediaFiltrada = (media.filter(dato => ((dato.titulo.toLowerCase().includes(textoBuscar.toLowerCase()))||(dato.sipnosis.toLowerCase().includes(textoBuscar.toLowerCase())))));
+            mediaFiltrada = (media.filter(dato => ((dato.titulo.toLowerCase().includes(textoBuscar.toLowerCase()))||(dato.sinopsis.toLowerCase().includes(textoBuscar.toLowerCase())))));
         }
         }
         
@@ -64,7 +64,7 @@ export default function ListaMedia({tipo, genero, textoBuscar, botonPlay, botonE
                         <img className='imagen-dato'src={dato.imagen}/>
                         <div className='contiene-titulo-sinopsis' >                            
                             <p className='titulo'>{dato.titulo} <span className='tipo'>({dato.tipo})</span> </p>                            
-                            <p >{dato.sipnosis}</p>
+                            <p >{dato.sinopsis}</p>
                         </div>
                         <div className='contiene-button'>
                             <div className='tooltip'>
