@@ -26,15 +26,17 @@ function CarruselAleatorioxGenero({ tipo, genero }) {
       let datosFiltrados = dataxGenero.filter(elemento => elemento.id_genero == genero);
 
       if (tipo === "peliculas") {
-        datosFiltrados = dataxGenero.filter(elemento => elemento.tipo === "pelicula");
+        datosFiltrados = datosFiltrados.filter(elemento => elemento.tipo === "pelicula");
       } else if (tipo === "series") {
-        datosFiltrados = dataxGenero.filter(elemento => elemento.tipo === "serie");
+        datosFiltrados = datosFiltrados.filter(elemento => elemento.tipo === "serie");
       }
 
       const datosMezclados = datosFiltrados.sort(() => Math.random() - 0.5);
       const primerosTresElementos = datosMezclados.slice(0, 9);
 
       setElementosAleatoriosxGenero(primerosTresElementos);
+      console.log(primerosTresElementos);
+      console.log('tipo '+tipo+' - genero '+genero);
     }
   }, [tipo, genero, dataxGenero]);
 
@@ -71,7 +73,7 @@ function CarruselAleatorioxGenero({ tipo, genero }) {
             <div className='d-flex'>
               {elementosAleatoriosxGenero.slice(slideIndex * 3, slideIndex * 3 + 3).map((elementoxGenero, indexxGenero) => (
                 <div key={indexxGenero} className='contenedor-img'>
-                  <img className='media-img img-zoom' src={elementoxGenero.imagen} alt={`portada de ${elementoxGenero.titulo}`} />
+                  <img className='media-img img-zoom' src={elementoxGenero.imagen} alt={`portada de ${elementoxGenero.titulo}`} title={elementoxGenero.tipo+' - '+elementoxGenero.id_genero} />
                 </div>
               ))}
             </div>
