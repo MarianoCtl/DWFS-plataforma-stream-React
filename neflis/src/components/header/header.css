@@ -6,6 +6,7 @@
     grid-row-gap: 0px;
     background-color: #212529;
     margin-bottom: 1%;
+    height: 60px;
     box-shadow: 2px 5px 5px 0px rgba(46,70,121,0.75);
     }
 
@@ -16,8 +17,9 @@ a{
 }
 
 .logoHeader{
-    width: 85%;
-    height: 100%;
+    display: flex;
+    width: 200px;
+    height: 63px;
 }
 
 a:hover{
@@ -29,11 +31,14 @@ a:hover{
 
 .inicio-Peliculas-Series{
     display: flex;
+    align-items: center;
     justify-content: space-evenly;
-    padding-right: 70%;
+    padding-right: 75%;
 }
 
 .separarInicio{
+    display: flex;
+    justify-content: center;
     padding-left: 10%;
     transition: all .5s ease;
 
@@ -45,12 +50,13 @@ a:hover{
 
 .buscador-Ingresar{
     display: flex;
+    align-items: center;
     justify-content: space-evenly;
     padding-left: 30%;
 }
 
 .tamanioHeader{
-    font-size: 1.8vw;
+    font-size: 1.3vw;
 }
 
 .btnIngresar{
