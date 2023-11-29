@@ -1,0 +1,34 @@
+
+.contenedor-footer{
+    display: flex;
+    justify-content: space-around;
+    background-color: #212529;
+    box-shadow: 2px -5px 5px 0px rgba(46,70,121,0.75);
+    
+    
+}
+
+a{
+    text-decoration: none;
+    color: whitesmoke;
+    transition: all .5s ease;
+}
+
+p{
+    text-decoration: none;
+    color: whitesmoke;
+    transition: all .5s ease;
+}
+
+a:hover{
+    color: aquamarine;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-bottom: 2px solid aquamarine;
+}
+
+.tamanioFooter{
+    font-size: 1.8vw;
+}
+
+
