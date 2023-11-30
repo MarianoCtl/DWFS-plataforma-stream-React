@@ -80,7 +80,7 @@ function CarruselAleatorio({ tipo }) {
                             </div>
                             <div className='contenedor-info'>
                                 <div className="titulo">{elemento.titulo}</div>
-                                <div className="sinopsis">{elemento.sipnosis}</div>
+                                <div className="sinopsis">{elemento.sinopsis}</div>
                                 <div className="tipo">{elemento.tipo.toUpperCase()}</div>
                                 <button className='btn-ver sombra'>Ver</button>
                             </div>

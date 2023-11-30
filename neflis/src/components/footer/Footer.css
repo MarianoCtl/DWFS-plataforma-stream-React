@@ -4,6 +4,7 @@
     justify-content: space-around;
     background-color: #212529;
     box-shadow: 2px -5px 5px 0px rgba(46,70,121,0.75);
+    margin-top: 30px;
     
     
 }
@@ -28,7 +29,7 @@ a:hover{
 }
 
 .tamanioFooter{
-    font-size: 1.8vw;
+    font-size: 1.3vw;
 }
 
 
