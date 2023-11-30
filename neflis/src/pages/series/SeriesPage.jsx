@@ -28,7 +28,7 @@ function SeriesPage() {
       <div>
         {data.map((elemento, index) => (
           <div key={index} className="contenedor-por-genero">
-            <h3 className="genero">Películas de {elemento.Generos}</h3>
+            <h3 className="genero">Series de {elemento.Generos}</h3>
             {data.length > 0 && <CarruselAleatorioxGenero tipo={"series"} key={elemento.id} genero={elemento.id} />}
           </div>
         ))}
