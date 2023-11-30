@@ -1,40 +1,14 @@
-*{
-    padding: 0%;
-    margin: 0%;
-}
-img{
-    margin:5% 5%;
-    width:80%;
-    height:150px;
-    border-radius: 10px;
+.carousel {
     display: flex;
-    justify-content: center;
-}
-.contenedor{
-    margin-left: 10%;
-    width:80%;
-    height: 230px;
-}
-.peliculas{
-    display: flex;
-    justify-content: center;
-    border: 1px solid black;
-}
-body{
-    background-color: black;
-}
-img:hover{
-    cursor: pointer;
-    scale:1.1;
-    border:2px solid white
-}
-.contenido{
-    color: white;
-}
-.nombreCont{
-    color: white;
-    background-color: blue;
-}
-.prev ,.next{  
-    color:white;
-}
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  button {
+    margin: 5px;
+  }
+  
+  img {
+    max-width: 100%;
+    height: auto;
+  }
