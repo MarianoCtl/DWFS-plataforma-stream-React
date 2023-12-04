@@ -14,15 +14,15 @@ function RoutesList() {
   return (
     <>
         <Routes>
-          <Route path='/' element={<InicioPage/>}>Este es el inicio</Route>
-          <Route path='/peliculas' element={<PeliculasPage/>}>Este es el peliculas</Route>
-          <Route path='/buscar' element={<BuscarPage/>}>Este es el buscar</Route>
-          <Route path='/contacto' element={<ContactoPage/>}>Este es el peliculas</Route>
-          <Route path='/ingresar' element={<IngresarPage/>}>Este es el inicio</Route>
-          <Route path='/registro' element={<RegistroPage/>}>Este es el peliculas</Route>
-          <Route path='/reproductor' element={<ReproductorPage/>}>Este es el inicio</Route>
-          <Route path='/series' element={<SeriesPage/>}>Este es el peliculas</Route>
-          <Route path='/sobre-nosotros' element={<SobreNosotrosPage/>}>Este es el inicio</Route>
+          <Route path='/' element={<InicioPage/>}>Inicio</Route>
+          <Route path='/peliculas' element={<PeliculasPage/>}>Películas</Route>
+          <Route path='/buscar' element={<BuscarPage/>}>Buscar</Route>
+          <Route path='/contacto' element={<ContactoPage/>}>Contacto</Route>
+          <Route path='/ingresar' element={<IngresarPage/>}>Ingresar</Route>
+          <Route path='/registro' element={<RegistroPage/>}>Registrarse</Route>
+          <Route path='/reproductor' element={<ReproductorPage/>}>Reproductor</Route>
+          <Route path='/series' element={<SeriesPage/>}>Series</Route>
+          <Route path='/sobre-nosotros' element={<SobreNosotrosPage/>}>Sobre nosotros</Route>
         </Routes>
     </>
   )

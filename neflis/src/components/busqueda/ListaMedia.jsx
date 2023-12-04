@@ -5,8 +5,6 @@ export default function ListaMedia({tipo, genero, textoBuscar, botonPlay, botonE
     const url = 'https://6556206a84b36e3a431f1fb4.mockapi.io/media'    
            
         const [media, setMedia] = useState([]);
-
-        
       
         useEffect(() => {
             //Trae las películas y series de la API
@@ -21,10 +19,7 @@ export default function ListaMedia({tipo, genero, textoBuscar, botonPlay, botonE
                     console.error('Error fetch:', error);
                 }
             };
-    
             ObtenerMedia();
-            
-           
         }, []);
     
     let mediaFiltrada = []    
@@ -34,26 +29,22 @@ export default function ListaMedia({tipo, genero, textoBuscar, botonPlay, botonE
             mediaFiltrada = (media.filter(dato => ((dato.tipo===tipo)&&(dato.id_genero===genero))&&((dato.titulo.toLowerCase().includes(textoBuscar.toLowerCase()))||(dato.sinopsis.toLowerCase().includes(textoBuscar.toLowerCase())))));
         }else{
             mediaFiltrada = (media.filter(dato => ((dato.tipo===tipo))&&((dato.titulo.toLowerCase().includes(textoBuscar.toLowerCase()))||(dato.sinopsis.toLowerCase().includes(textoBuscar.toLowerCase())))));
-
         }
-        
     }else{
         if (genero){
             mediaFiltrada = (media.filter(dato => ((dato.id_genero===genero))&&((dato.titulo.toLowerCase().includes(textoBuscar.toLowerCase()))||(dato.sinopsis.toLowerCase().includes(textoBuscar.toLowerCase())))));
         }else{
             mediaFiltrada = (media.filter(dato => ((dato.titulo.toLowerCase().includes(textoBuscar.toLowerCase()))||(dato.sinopsis.toLowerCase().includes(textoBuscar.toLowerCase())))));
         }
-        }
-        
+    }
 
     const mediaEditar =(dato)=> {
         localStorage.setItem('datoAEditar', JSON.stringify(dato));
     }
 
     const mediaEliminar = (dato)=>{       
-        media.splice(dato,1);
-        //console.log(datos);        
-    };    
+        media.splice(dato,1);  
+    }    
 
     return(
         <div>

@@ -2,8 +2,6 @@ import React, { useState } from "react";
 import ListaMedia from "./ListaMedia";
 import './busquedaMedia.css';
 
-
-
 export default function BusquedaMedia(){
 
     const [tipoMedia, setTipoMedia] = useState('');
