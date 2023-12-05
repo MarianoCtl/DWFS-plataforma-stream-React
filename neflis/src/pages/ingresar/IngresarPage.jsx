@@ -1,8 +1,11 @@
 import React from 'react'
+import Login from '../../components/login/Login'
 
 function IngresarPage() {
   return (
-    <div>Ingresar </div>
+    <div>
+      <Login />
+    </div>
   )
 }
 export default IngresarPage
