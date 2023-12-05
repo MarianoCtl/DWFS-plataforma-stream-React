@@ -56,7 +56,7 @@ export default function BusquedaMedia(){
                 </div>                
             </div>
         </div>
-        <ListaMedia tipo = {tipoMedia} genero = {generoMedia} textoBuscar = {textoBuscar} botonPlay = {true} botonEditar={false} botonEliminar={false}/>        
+        <ListaMedia tipo = {tipoMedia} genero = {generoMedia} textoBuscar = {textoBuscar} botonPlay = {false} botonEditar={true} botonEliminar={true}/>        
         </>
 
     )
