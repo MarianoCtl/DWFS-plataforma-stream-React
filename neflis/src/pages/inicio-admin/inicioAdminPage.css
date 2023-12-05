@@ -1,0 +1,44 @@
+.btnNueva {
+    margin-top: 20px;
+    margin-left: 12px;
+    margin-bottom: 15px;
+    background-color: rgb(116, 189, 114);
+    border-radius: 5px;
+    border: 1px solid #2e7934;
+    display: inline-block;
+    cursor: pointer;
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 10px 30px;
+    text-decoration: none;
+    text-shadow: 0px -1px 0px #5b786a;
+}
+
+.btnNueva:hover {
+    background-color: #60a54b;
+}
+
+.btnNueva:active {
+    position: relative;
+    top: 1px;
+}
+
+.d-flex-admin {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 25px;
+}
+
+.mr-25 {
+    margin-right: 25px;
+}
+
+.container {
+    margin: 25px;
+}
+
+.titulo-bienvenida {
+    margin-left: 40px;
+    margin-bottom: 0px;
+}
