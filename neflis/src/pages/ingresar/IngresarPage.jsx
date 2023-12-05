@@ -1,9 +1,10 @@
 import React from 'react'
 import Login from '../../components/login/Login'
+import '../../index.css';
 
 function IngresarPage() {
   return (
-    <div>
+    <div className='fija-footer'>
       <Login />
     </div>
   )

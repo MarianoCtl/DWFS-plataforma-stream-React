@@ -1,8 +1,9 @@
 import React from 'react'
+import '../../index.css';
 
 function ReproductorPage() {
   return (
-    <div>Reproductor </div>
+    <div className='fija-footer'>Reproductor </div>
   )
 }
 export default ReproductorPage

@@ -1,8 +1,9 @@
 import React from 'react'
+import '../../index.css';
 
 function RegistroPage() {
   return (
-    <div>Registro </div>
+    <div className='fija-footer'>Registro </div>
   )
 }
 export default RegistroPage

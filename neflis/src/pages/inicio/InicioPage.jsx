@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import CarruselAleatorio from '../../components/carrusel-aleatorio/CarruselAleatorio';
 import CarruselAleatorioxGenero from '../../components/carrusel-aleatorio-x-genero/CarruselAleatorioxGenero';
 import "./inicioPage.css";
+import '../../index.css';
 
 function InicioPage() {
     const URL_API_generos = "https://65565a1684b36e3a431f9f30.mockapi.io/api/v1/Generos";
@@ -23,7 +24,7 @@ function InicioPage() {
     }, []);
 
   return (
-    <div>
+    <div className='fija-footer'>
       <CarruselAleatorio/>
       <div>
         {data.map((elemento, index) => (
