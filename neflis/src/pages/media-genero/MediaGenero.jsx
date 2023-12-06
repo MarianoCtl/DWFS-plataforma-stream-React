@@ -6,12 +6,10 @@ import '../../components/busqueda/busquedaMedia.css';
 export default function MediaGenero() {
     let {tipo,genero}=useParams();//aca trae datos(variables) desde la ruta anterior
   const [textoInputBuscar, setTextoInputBuscar] = useState('');
-
     //buscador
     const SetearTextoBuscar = (e)=>{
         setTextoInputBuscar(e.target.value);
     }
-
     const buscarTexto = ()=>{
         setTextoBuscar(textoInputBuscar);
     }
