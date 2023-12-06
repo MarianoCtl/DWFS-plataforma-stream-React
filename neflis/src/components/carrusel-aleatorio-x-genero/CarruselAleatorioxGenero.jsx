@@ -72,8 +72,14 @@ function CarruselAleatorioxGenero({ tipo, genero }) {
           <div key={slideIndex} className={`mySlidesxGenero fade mySlides-${elementosAleatoriosxGenero[0]?.id_genero}`}>
             <div className='d-flex'>
               {elementosAleatoriosxGenero.slice(slideIndex * 3, slideIndex * 3 + 3).map((elementoxGenero, indexxGenero) => (
-                <div key={indexxGenero} className='contenedor-img'>
+                <div key={indexxGenero} className='contenedor-img containerHover'>
                   <img className='media-img img-zoom' src={elementoxGenero.imagen} alt={`portada de ${elementoxGenero.titulo}`} title={elementoxGenero.tipo+' - '+elementoxGenero.id_genero} />
+                <div className="overlayHover media-img ">
+                  <div className="textHover">
+                    <h4 className="tituloHover">{elementoxGenero.titulo}</h4>
+                    <p className="sinopsisHover">{elementoxGenero.sinopsis}</p>
+                    </div>
+                </div>
                 </div>
               ))}
             </div>
