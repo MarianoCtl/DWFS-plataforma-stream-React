@@ -13,6 +13,8 @@ import SeriesPage from '../pages/series/SeriesPage'
 import SobreNosotrosPage from '../pages/sobre-nosotros/SobreNosotrosPage'
 import InicioAdminPage from '../pages/inicio-admin/InicioAdminPage'
 import NuevaPage from '../pages/nueva/NuevaPage'
+import MediaGenero from '../pages/media-genero/MediaGeneroPage';
+
 function RoutesList() {
   return (
     <>
@@ -29,6 +31,7 @@ function RoutesList() {
           <Route path='/admin' element={<InicioAdminPage/>}>Inicio administración</Route>
           <Route path='/nueva' element={<NuevaPage/>}>Nueva serie o película</Route>
           <Route path='/mensajes' element={<MensajesPage/>}>Centro de mensajería</Route>
+          <Route path='/media/:tipo/:genero' element={<MediaGenero/>}>Tipo y genero</Route>
         </Routes>
     </>
   )

@@ -6,13 +6,13 @@ import RoutesList from './routers/RoutesList'
 
 function App() {
   return (
-    <>  
+    <div className='app'>  
     <BrowserRouter>
       <Header/>
       <RoutesList/>
       <Footer/>
     </BrowserRouter>
-    </>
+    </div>
   );
 }
 
