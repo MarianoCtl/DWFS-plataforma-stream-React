@@ -47,3 +47,8 @@
     color: whitesmoke;
     font-size: 0.8rem;
 }
+.modal{
+    display: flex;
+    justify-content: center;
+    
+}

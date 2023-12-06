@@ -3,6 +3,7 @@ import CarruselAleatorio from '../../components/carrusel-aleatorio/CarruselAleat
 import CarruselAleatorioxGenero from '../../components/carrusel-aleatorio-x-genero/CarruselAleatorioxGenero';
 import "../inicio/inicioPage.css";
 import { Link } from 'react-router-dom';
+import '../../index.css';
 
 function SeriesPage() {
     const URL_API_generos = "https://65565a1684b36e3a431f9f30.mockapi.io/api/v1/Generos";
@@ -23,7 +24,7 @@ function SeriesPage() {
         fetchData();
     }, []);
   return (
-    <div>
+    <div className='fija-footer'>
       <CarruselAleatorio tipo={"series"}/>
       <div>
         {data.map((elemento, index) => (

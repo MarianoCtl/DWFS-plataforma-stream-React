@@ -1,9 +1,10 @@
 import React from 'react'
 import SobreNosotros from '../../components/SobreNosotros/SobreNosotros';
+import '../../index.css';
 
 function SobreNosotrosPage() {
   return (
-    <div>
+    <div className='fija-footer'>
       <SobreNosotros />
     </div>
   )

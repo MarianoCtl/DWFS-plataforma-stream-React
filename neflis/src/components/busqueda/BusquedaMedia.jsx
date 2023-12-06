@@ -2,10 +2,7 @@ import React, { useState } from "react";
 import ListaMedia from "./ListaMedia";
 import './busquedaMedia.css';
 
-
-
 export default function BusquedaMedia({tipo,genero}){
-
     const [tipoMedia, setTipoMedia] = useState(tipo);
     const seleccionarTipoMedia = (e)=>{
         setTipoMedia(e.target.value);
@@ -58,7 +55,7 @@ export default function BusquedaMedia({tipo,genero}){
                 </div>                
             </div>
         </div>
-        <ListaMedia tipo = {tipoMedia} genero = {generoMedia} textoBuscar = {textoBuscar} botonPlay = {true} botonEditar={false} botonEliminar={false}/>        
+        <ListaMedia tipo = {tipoMedia} genero = {generoMedia} textoBuscar = {textoBuscar} botonPlay = {false} botonEditar={true} botonEliminar={true}/>        
         </>
 
     )
