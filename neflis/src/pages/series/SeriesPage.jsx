@@ -22,7 +22,6 @@ function SeriesPage() {
 
         fetchData();
     }, []);
-
   return (
     <div>
       <CarruselAleatorio tipo={"series"}/>
