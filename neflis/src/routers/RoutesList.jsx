@@ -5,6 +5,7 @@ import InicioPage from '../pages/inicio/InicioPage'
 import PeliculasPage from '../pages/peliculas/PeliculasPage'
 import BuscarPage from '../pages/buscar/BuscarPage'
 import ContactoPage from '../pages/contacto/ContactoPage'
+import MensajesPage from '../pages/contacto/MenajesPage'
 import IngresarPage from '../pages/ingresar/IngresarPage'
 import RegistroPage from '../pages/registro/RegistroPage'
 import ReproductorPage from '../pages/reproductor/ReproductorPage'
@@ -27,6 +28,7 @@ function RoutesList() {
           <Route path='/sobre-nosotros' element={<SobreNosotrosPage/>}>Sobre nosotros</Route>
           <Route path='/admin' element={<InicioAdminPage/>}>Inicio administración</Route>
           <Route path='/nueva' element={<NuevaPage/>}>Nueva serie o película</Route>
+          <Route path='/mensajes' element={<MensajesPage/>}>Centro de mensajería</Route>
         </Routes>
     </>
   )
