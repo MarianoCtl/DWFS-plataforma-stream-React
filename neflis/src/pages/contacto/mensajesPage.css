@@ -1,0 +1,34 @@
+
+.lista-mensaje{
+    list-style: none;
+}
+.contiene-mensaje{
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid white;
+    border-radius: 10px;
+    max-width: 1000px;
+    margin-bottom: 10px;
+    
+
+}
+.contiene-mensaje-consulta{
+    display: flex;
+    flex-direction: column;
+
+}
+.contiene-consulta{
+    border: 1px solid white;
+    border-radius: 10px;
+    margin: 10px;
+    width: 700px;
+    height: 200px;
+    padding-left: 10px;
+    background-color: #212529;
+}
+.parrafo{
+    color: whitesmoke;
+}
+.contiene-identificacion{
+    padding: 20px;
+}
