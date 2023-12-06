@@ -2,14 +2,13 @@ import React, { useState } from "react";
 import ListaMedia from "./ListaMedia";
 import './busquedaMedia.css';
 
-export default function BusquedaMedia(){
-
-    const [tipoMedia, setTipoMedia] = useState('');
+export default function BusquedaMedia({tipo,genero}){
+    const [tipoMedia, setTipoMedia] = useState(tipo);
     const seleccionarTipoMedia = (e)=>{
         setTipoMedia(e.target.value);
         console.log(tipoMedia);
     }
-    const [generoMedia, setGeneroMedia] = useState('');
+    const [generoMedia, setGeneroMedia] = useState(parseInt(genero));
     const seleccionarGeneroMedia = (e)=>{
         setGeneroMedia(Number(e.target.value));
         console.log(generoMedia);
@@ -49,10 +48,10 @@ export default function BusquedaMedia(){
             </select>
             <input type="text" className = 'texto-buscar' placeholder="Ingrese pelicula o serie a buscar" onChange={SetearTextoBuscar} />
                 <div className="tooltip">
-                <button className="button-lupa-refresh" ><img src={process.env.PUBLIC_URL + 'buscar.png'} onClick={buscarTexto} ></img> <span class="tooltiptext">Buscar</span></button>
+                <button className="button-lupa-refresh" ><img src={process.env.PUBLIC_URL + '/buscar.png'} onClick={buscarTexto} ></img> <span class="tooltiptext">Buscar</span></button>
                 </div>
                 <div className="tooltip">
-                <button className="button-lupa-refresh" ><img src={process.env.PUBLIC_URL + 'actualizar.png'} onClick={()=>window.location.reload()} ></img> <span class="tooltiptext">Actualizar</span> </button>
+                <button className="button-lupa-refresh" ><img src={process.env.PUBLIC_URL + '/actualizar.png'} onClick={()=>window.location.reload()} ></img> <span class="tooltiptext">Actualizar</span> </button>
                 </div>                
             </div>
         </div>

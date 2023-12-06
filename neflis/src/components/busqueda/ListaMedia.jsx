@@ -113,13 +113,13 @@ export default function ListaMedia({tipo, genero, textoBuscar, botonPlay, botonE
                         </div>
                         <div className='contiene-button'>
                             <div className='tooltip'>
-                            {botonPlay&&<button className='boton'><img src={process.env.PUBLIC_URL + 'play.png'} key={dato.id} onClick={()=>{alert(dato.titulo)}}></img> <span class="tooltiptext">Reproducir</span> </button>}
+                            {botonPlay&&<button className='boton'><img src={process.env.PUBLIC_URL + '/play.png'} key={dato.id} onClick={()=>{alert(dato.titulo)}}></img> <span class="tooltiptext">Reproducir</span> </button>}
                             </div>
                             <div className='tooltip'>
-                            {botonEditar&&<button className='boton'><img src={process.env.PUBLIC_URL + 'editar.png'} key={dato.id} onClick={()=>{mediaEditar(dato)}} ></img> <span class="tooltiptext">Editar</span> </button>}
+                            {botonEditar&&<button className='boton'><img src={process.env.PUBLIC_URL + '/editar.png'} key={dato.id} onClick={()=>{mediaEditar(dato)}} ></img> <span class="tooltiptext">Editar</span> </button>}
                             </div>
                             <div className='tooltip'>
-                            {botonEliminar&&<button className='boton'><img src={process.env.PUBLIC_URL + 'eliminar.png'} key={dato.id} onClick={()=>{filtraEliminarMedia(dato.id)}} ></img> <span class="tooltiptext">Eliminar</span> </button>}
+                            {botonEliminar&&<button className='boton'><img src={process.env.PUBLIC_URL + '/eliminar.png'} key={dato.id} onClick={()=>{filtraEliminarMedia(dato.id)}} ></img> <span class="tooltiptext">Eliminar</span> </button>}
                             </div>
                         </div>
                     </div>                    

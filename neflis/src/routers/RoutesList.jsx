@@ -10,6 +10,7 @@ import RegistroPage from '../pages/registro/RegistroPage'
 import ReproductorPage from '../pages/reproductor/ReproductorPage'
 import SeriesPage from '../pages/series/SeriesPage'
 import SobreNosotrosPage from '../pages/sobre-nosotros/SobreNosotrosPage'
+import MediaGenero from '../pages/media-genero/MediaGeneroPage';
 function RoutesList() {
   return (
     <>
@@ -23,6 +24,7 @@ function RoutesList() {
           <Route path='/reproductor' element={<ReproductorPage/>}>Reproductor</Route>
           <Route path='/series' element={<SeriesPage/>}>Series</Route>
           <Route path='/sobre-nosotros' element={<SobreNosotrosPage/>}>Sobre nosotros</Route>
+          <Route path='/media/:tipo/:genero' element={<MediaGenero/>}>Tipo y genero</Route>
         </Routes>
     </>
   )
