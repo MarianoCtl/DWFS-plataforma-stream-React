@@ -1,21 +1,62 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react';
 import "../header/header.css"
-import { Link } from "react-router-dom";
+import { Link, redirect } from "react-router-dom";
+
 
 export default function Header() {
+
+  const [nombre, setNombre] = useState();
+  const [rol, setRol] = useState("");
+
+  useEffect(()=>{
+      const userDataString = sessionStorage.getItem('userData');
+
+      if(userDataString){
+          const userData = JSON.parse(userDataString);
+          setNombre(userData.nombre);
+          setRol(userData.rol);
+      }
+  }, []);
+
+  const terminarSesion = () =>{
+    sessionStorage.removeItem('userData');
+    window.location.href = '/';
+  }
+
   return (
     <div className='parentHeader'>
       <div>
         <img src={process.env.PUBLIC_URL + "logo.png"} alt="" className='logoHeader'/>
       </div>
       <div className='inicio-Peliculas-Series'>
-        <p className='separarInicio tamanioHeader'>{<Link to="/">Inicio</Link>}</p>
-        <p className='separarInicio tamanioHeader'>{<Link to="/peliculas">Peliculas</Link>}</p>
-        <p className='separarInicio tamanioHeader'>{<Link to="/series">Series</Link>}</p>
+        {(rol === 'User' || rol == "") ? (
+          <>
+            <p className='separarInicio tamanioHeader'>{<Link to="/" className='efectoLink'>Inicio</Link>}</p>
+            <p className='separarInicio tamanioHeader'>{<Link to="/peliculas" className='efectoLink'>Peliculas</Link>}</p>
+            <p className='separarInicio tamanioHeader'>{<Link to="/series" className='efectoLink'>Series</Link>}</p>
+          </>
+        ):(
+          <>
+            <p className='separarInicio tamanioHeader'>{<Link to="/admin" className='efectoLink'>Inicio</Link>}</p>
+          </>
+        )}
       </div>
       <div className='buscador-Ingresar'>
-        <p className='tamanioHeader'>{<Link to="/buscar">Buscador</Link>}</p>
-        <button type="button" className='btnIngresar'>{<Link to="/ingresar">Ingresar</Link>}</button>
+        {(rol === 'User' || rol == "") && (
+          <>
+            <p className='tamanioHeader'>{<Link to="/buscar" className='efectoLink'>Buscador</Link>}</p>
+          </>
+        )}
+          <p className='tamanioHeader'>{nombre}</p>
+          {rol == "" ? (
+          <>
+            {<Link to="/ingresar"><button type="button" className='btnIngresar'>Ingresar</button></Link>}
+          </>
+        ):(
+          <>
+            {<Link to="/ingresar"><button type="button" className='btnIngresar' onClick={terminarSesion}>Salir</button></Link>}
+          </>
+        )}   
       </div>
     </div>
   )

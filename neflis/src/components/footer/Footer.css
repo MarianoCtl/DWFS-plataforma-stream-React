@@ -9,19 +9,13 @@
     
 }
 
-a{
+.efectoLink{
     text-decoration: none;
     color: whitesmoke;
     transition: all .5s ease;
 }
 
-p{
-    text-decoration: none;
-    color: whitesmoke;
-    transition: all .5s ease;
-}
-
-a:hover{
+.efectoLink:hover{
     color: aquamarine;
     padding-left: 10px;
     padding-right: 10px;
