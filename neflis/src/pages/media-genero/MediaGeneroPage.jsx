@@ -3,7 +3,7 @@ import { useParams} from 'react-router-dom';
 import ListaMedia from '../../components/busqueda/ListaMedia';
 import '../../components/busqueda/busquedaMedia.css';
 
-export default function MediaGenero() {
+export default function MediaGeneroPage() {
     let {tipo,genero}=useParams();//aca trae datos(variables) desde la ruta anterior
   const [textoInputBuscar, setTextoInputBuscar] = useState('');
     //buscador

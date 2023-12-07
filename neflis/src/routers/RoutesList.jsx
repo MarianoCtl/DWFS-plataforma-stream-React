@@ -10,7 +10,7 @@ import RegistroPage from '../pages/registro/RegistroPage'
 import ReproductorPage from '../pages/reproductor/ReproductorPage'
 import SeriesPage from '../pages/series/SeriesPage'
 import SobreNosotrosPage from '../pages/sobre-nosotros/SobreNosotrosPage'
-import MediaGenero from '../pages/media-genero/MediaGenero';
+import MediaGenero from '../pages/media-genero/MediaGeneroPage';
 function RoutesList() {
   return (
     <>
