@@ -22,16 +22,18 @@ function InicioAdminPage() {
     }, []);
 
   return (
-    <div className='container'>
-        <div className='d-flex-admin'>
-            <h1 className='titulo-bienvenida'>¡Hola {nombre}!</h1>
-            <div className='mr-25'>
-                {<Link to="/mensajes"><button type="button" className='btnMensaje'>Centro de mensajería</button></Link>}
-                {<Link to="/nueva"><button type="button" className='btnNueva'>Nueva película o serie</button></Link>}
+    <div className='fija-footer'>
+        <div className='container'>
+            <div className='d-flex-admin'>
+                <h1 className='titulo-bienvenida'>¡Hola {nombre}!</h1>
+                <div className='mr-25'>
+                    {<Link to="/mensajes"><button type="button" className='btnMensaje'>Centro de mensajería</button></Link>}
+                    {<Link to="/nueva"><button type="button" className='btnNueva'>Nueva película o serie</button></Link>}
+                </div>
             </div>
-        </div>
-        <BusquedaMedia btnUser={false} btnAdmin={true}/>   
-    </div> 
+            <BusquedaMedia btnUser={false} btnAdmin={true}/>   
+        </div> 
+    </div>
   )
 }
 
