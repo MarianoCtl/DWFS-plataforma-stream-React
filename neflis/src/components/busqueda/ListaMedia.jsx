@@ -87,32 +87,33 @@ export default function ListaMedia({ tipo, genero, textoBuscar, botonPlay, boton
     return (
         <div className='contiene-lista'>
             <ul>
-                {mediaFiltrada.map((dato ) => (    
-                <li className='titulo-dato'key={dato.id}>
-                    <div className='contiene-dato'>
-                        <img className='imagen-dato'src={dato.imagen}/>
-                        <div className='contiene-titulo-sinopsis' >                            
-                            <p className='titulo'>{dato.titulo} <span className='tipo'>({dato.tipo})</span> </p>                            
-                            <p >{dato.sinopsis}</p>
-                            <div>
-                                {confirmacionVisible && (
-                                    <div className="modal">
-                                    <p>¿Estás seguro de que deseas eliminar?</p>
-                                    <button className='boton tooltip' ><img src={process.env.PUBLIC_URL + 'si.png'} key={dato.id} onClick={()=>{enviarSolicitudEliminacion(dato.id)}}></img><span class="tooltiptext">Sí</span></button>
-                                    <button className='boton tooltip'><img src={process.env.PUBLIC_URL + 'no.png'} key={dato.id} onClick={ocultarConfirmacion}></img><span class="tooltiptext">No</span></button>
-                                    </div>
-                                )}
+                {mediaFiltrada.map((dato) => (
+                    <li className='titulo-dato' key={dato.id}>
+                        <div className='contiene-dato'>
+                            <img className='imagen-dato' src={dato.imagen} />
+                            <div className='contiene-titulo-sinopsis' >
+                                <p className='titulo'>{dato.titulo} <span className='tipo'>({dato.tipo})</span> </p>
+                                <p >{dato.sinopsis}</p>
+                                <div>
+                                    {confirmacionVisible && (
+                                        <div className="modal">
+                                            <p>¿Estás seguro de que deseas eliminar?</p>
+                                            <button className='boton tooltip' ><img src={process.env.PUBLIC_URL + 'si.png'} key={dato.id} onClick={() => { enviarSolicitudEliminacion(dato.id) }}></img><span class="tooltiptext">Sí</span></button>
+                                            <button className='boton tooltip'><img src={process.env.PUBLIC_URL + 'no.png'} key={dato.id} onClick={ocultarConfirmacion}></img><span class="tooltiptext">No</span></button>
+                                        </div>
+                                    )}
+                                </div>
                             </div>
-                        </div>
-                        <div className='contiene-button'>
-                            <div className='tooltip'>
-                            {botonPlay&&<button className='boton'><img src={process.env.PUBLIC_URL + '/play.png'} key={dato.id} onClick={()=>{alert(dato.titulo)}}></img> <span class="tooltiptext">Reproducir</span> </button>}
-                            </div>
-                            <div className='tooltip'>
-                            {botonEditar&&<button className='boton'><img src={process.env.PUBLIC_URL + '/editar.png'} key={dato.id} onClick={()=>{mediaEditar(dato)}} ></img> <span class="tooltiptext">Editar</span> </button>}
-                            </div>
-                            <div className='tooltip'>
-                            {botonEliminar&&<button className='boton'><img src={process.env.PUBLIC_URL + '/eliminar.png'} key={dato.id} onClick={()=>{filtraEliminarMedia(dato.id)}} ></img> <span class="tooltiptext">Eliminar</span> </button>}
+                            <div className='contiene-button'>
+                                <div className='tooltip'>
+                                    {botonPlay && <button className='boton'><img src={process.env.PUBLIC_URL + '/play.png'} key={dato.id} onClick={() => { alert(dato.titulo) }}></img> <span class="tooltiptext">Reproducir</span> </button>}
+                                </div>
+                                <div className='tooltip'>
+                                    {botonEditar && <button className='boton'><img src={process.env.PUBLIC_URL + '/editar.png'} key={dato.id} onClick={() => { mediaEditar(dato) }} ></img> <span class="tooltiptext">Editar</span> </button>}
+                                </div>
+                                <div className='tooltip'>
+                                    {botonEliminar && <button className='boton'><img src={process.env.PUBLIC_URL + '/eliminar.png'} key={dato.id} onClick={() => { filtraEliminarMedia(dato.id) }} ></img> <span class="tooltiptext">Eliminar</span> </button>}
+                                </div>
                             </div>
                         </div>
                     </li>
