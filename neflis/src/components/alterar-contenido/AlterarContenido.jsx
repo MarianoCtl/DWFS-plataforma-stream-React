@@ -134,7 +134,15 @@ function AlterarContenido({accion,id}) {
     return (
         <div className='container'>
             <div className='d-flex-nueva'>
-                <h1 className='titulo-pagina'>Nueva serie/película</h1>
+                {(accion === "editar" && id) ? (
+                    <>
+                        <h1 className='titulo-pagina'>Modificar serie/película</h1>
+                    </>
+                ):(
+                    <>
+                        <h1 className='titulo-pagina'>Nueva serie/película</h1>
+                    </>
+                )}    
                 <div className='mr-25'>
                     {<Link to="/admin"><button type="button" className='btnCancelar'>Volver</button></Link>}
                 </div>
@@ -208,8 +216,7 @@ function AlterarContenido({accion,id}) {
                             <>
                                 <button type='button' className='btnAgregar sombra' onClick={handleAgregar}>Agregar</button>
                             </>
-                        )}
-                        
+                        )}                        
                     </div>
                 </form>
             </div>
