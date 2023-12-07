@@ -25,7 +25,7 @@ function Login() {
               id: user.id,
             }));
             if (user.rol === "Admin") {
-              window.location.href = '/inicio/admin';
+              window.location.href = '/admin';
             }else{
               window.location.href = '/';
             }

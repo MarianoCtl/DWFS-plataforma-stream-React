@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import ListaMedia from "./ListaMedia";
 import './busquedaMedia.css';
 
-export default function BusquedaMedia({tipo,genero}){
+export default function BusquedaMedia({ btnUser, btnAdmin, tipo, genero }) {
     const [tipoMedia, setTipoMedia] = useState(tipo);
     const seleccionarTipoMedia = (e)=>{
         setTipoMedia(e.target.value);
@@ -16,12 +16,12 @@ export default function BusquedaMedia({tipo,genero}){
 
     const [textoInputBuscar, setTextoInputBuscar] = useState('');
 
-    const SetearTextoBuscar = (e)=>{
+    const SetearTextoBuscar = (e) => {
         setTextoInputBuscar(e.target.value);
-        console.log(textoInputBuscar);              
+        console.log(textoInputBuscar);
     }
 
-    const buscarTexto = ()=>{
+    const buscarTexto = () => {
         setTextoBuscar(textoInputBuscar);
         console.log(textoBuscar);
     }
@@ -54,8 +54,7 @@ export default function BusquedaMedia({tipo,genero}){
                 <button className="button-lupa-refresh" ><img src={process.env.PUBLIC_URL + '/actualizar.png'} onClick={()=>window.location.reload()} ></img> <span class="tooltiptext">Actualizar</span> </button>
                 </div>                
             </div>
-        </div>
-        <ListaMedia tipo = {tipoMedia} genero = {generoMedia} textoBuscar = {textoBuscar} botonPlay = {false} botonEditar={true} botonEliminar={true}/>        
+            <ListaMedia tipo={tipoMedia} genero={generoMedia} textoBuscar={textoBuscar} botonPlay={btnUser} botonEditar={btnAdmin} botonEliminar={btnAdmin} />
         </>
 
     )
