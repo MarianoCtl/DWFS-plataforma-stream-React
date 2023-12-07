@@ -1,16 +1,16 @@
 import React, { useEffect } from 'react';
-import AgregaContenido from '../../components/agrega-contenido/AgregaContenido';
+import AlterarContenido from '../../components/alterar-contenido/AlterarContenido';
 
 
 function NuevaPage() {
-    useEffect(()=>{
-        document.title = 'Nueva película/serie';
-    });
+  useEffect(() => {
+    document.title = 'Nueva película/serie';
+  });
 
   return (
-    <>
-        <AgregaContenido/>
-    </>
+    <div className='fija-footer'>
+      <AlterarContenido />
+    </div>
   )
 }
 
