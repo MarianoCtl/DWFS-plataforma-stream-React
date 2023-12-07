@@ -132,7 +132,7 @@ let datosConFecha = []
         <form className='contiene-registro' onSubmit={handleSubmit}>
             <div className='contiene-titulo'>                
                 
-                <h2>CO<span><img src={process.env.PUBLIC_URL + 'icono.png'} alt="Logo de Neflis" className='icono' /></span>TACTO</h2>                
+                <h2 className='efectoContacto'>CO<span><img src={process.env.PUBLIC_URL + 'icono.png'} alt="Logo de Neflis" className='icono' /></span>TACTO</h2>                
             </div>
             
             <div className='contiene-input'>
