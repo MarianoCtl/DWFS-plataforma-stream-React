@@ -54,7 +54,8 @@ export default function BusquedaMedia({ btnUser, btnAdmin, tipo, genero }) {
                 <button className="button-lupa-refresh" ><img src={process.env.PUBLIC_URL + '/actualizar.png'} onClick={()=>window.location.reload()} ></img> <span class="tooltiptext">Actualizar</span> </button>
                 </div>                
             </div>
-            <ListaMedia tipo={tipoMedia} genero={generoMedia} textoBuscar={textoBuscar} botonPlay={btnUser} botonEditar={btnAdmin} botonEliminar={btnAdmin} />
+            </div>
+            <ListaMedia tipo={tipoMedia} genero={generoMedia} textoBuscar={textoBuscar} botonPlay={btnUser} botonEditar={btnAdmin} botonEliminar={btnAdmin} />            
         </>
 
     )
