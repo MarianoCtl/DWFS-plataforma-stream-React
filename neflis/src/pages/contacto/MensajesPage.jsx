@@ -24,7 +24,7 @@ function MensajesPage() {
     }, []);
 
     return (
-        <div className='contiene-lista'>
+        <div className='contiene-lista fija-footer'>
             <div className='d-flex-nueva'>
                 <h1 className='titulo-pagina'>Centro de Mesanjería</h1>
                 <div className='mr-25'>
@@ -54,7 +54,6 @@ function MensajesPage() {
                     </li>
                 ))}
             </ul>
-
         </div>
     )
 }

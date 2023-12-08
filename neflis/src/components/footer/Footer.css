@@ -1,29 +1,26 @@
-
-.contenedor-footer{
+.contenedor-footer {
     display: flex;
     justify-content: space-around;
     background-color: #212529;
-    box-shadow: 2px -5px 5px 0px rgba(46,70,121,0.75);
+    box-shadow: 2px -5px 5px 0px rgba(46, 70, 121, 0.75);
     margin-top: 30px;
-    
-    
+
+
 }
 
-.efectoLink{
+.efectoLink {
     text-decoration: none;
     color: whitesmoke;
     transition: all .5s ease;
 }
 
-.efectoLink:hover{
+.efectoLink:hover {
     color: aquamarine;
     padding-left: 10px;
     padding-right: 10px;
     border-bottom: 2px solid aquamarine;
 }
 
-.tamanioFooter{
-    font-size: 1vw;
+.tamanioFooter {
+    font-size: 18px;
 }
-
-

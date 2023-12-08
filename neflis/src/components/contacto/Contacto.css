@@ -1,4 +1,4 @@
-.contiene-form-registro{
+.contiene-form-registro {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -9,11 +9,13 @@
     width: 500px;
     border-radius: 20px;
 }
-.contiene-titulo{
+
+.contiene-titulo {
     display: flex;
     justify-content: center;
 }
-.contiene-registro{
+
+.contiene-registro {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -22,54 +24,83 @@
     height: 500px;
     padding-top: 30px;
 }
-.contiene-input{
+
+.contiene-input {
     display: flex;
     justify-content: space-between;
     padding-bottom: 5px;
     padding-top: 5px;
-    
+
 }
-.etiqueta{
+
+.etiqueta {
     color: white;
 }
-.ingresoDatos{
+
+.ingresoDatos {
     width: 300px;
     border-radius: 5px;
+    padding: .375rem .75rem;
 }
-.contiene-radio{
+
+.contiene-radio {
     display: flex;
     justify-content: center;
 }
-.contiene-btnEnviar{
+
+.contiene-btnEnviar {
     display: flex;
     justify-content: end;
 }
-.btnEnviar{
-    width: 152px;
-    border-radius: 5px;
-}
-.respuesta{
+
+.respuesta {
     font-family: Lato, sans-serif;
     font-size: 22px;
     font-style: italic;
-    color: white;    
+    color: white;
 }
 
-.respuesta-amarilla{
+.respuesta-amarilla {
     font-family: Lato, sans-serif;
     font-size: 22px;
     font-style: italic;
     color: yellow;
 }
-.icono{
-    width: 15%;
-    height: 70%;
+
+.icono {
+    width: 50px;
+    height: 50px;
 }
-.efectoContacto{
-    font-size: 40px;
+
+.efectoContacto {
+    font-size: 50px;
     font-family: Lato, sans-serif;
     font-weight: 1000;
     color: white;
-    
+}
 
+.btnEnviar {
+    margin-top: 20px;
+    margin-left: 12px;
+    margin-bottom: 15px;
+    background-color: rgb(116, 189, 114);
+    border-radius: 5px;
+    border: 1px solid #2e7934;
+    display: inline-block;
+    cursor: pointer;
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 7px 20px;
+    text-decoration: none;
+    text-shadow: 0px -1px 0px #5b786a;
+}
+
+.btnEnviar:hover {
+    background-color: #60a54b;
+}
+
+.btnEnviar:active {
+    position: relative;
+    top: 1px;
 }

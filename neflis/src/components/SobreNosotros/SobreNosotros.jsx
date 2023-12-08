@@ -50,7 +50,7 @@ function SobreNosotros() {
                         <li><strong>Joaquin Zoppi</strong></li>
                     </ul>
                 </section>
-        </div>
+            </div>
         </div>
 
     )
