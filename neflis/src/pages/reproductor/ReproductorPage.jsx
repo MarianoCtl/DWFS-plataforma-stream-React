@@ -4,9 +4,17 @@ import './reproductor.css'
 import { Link } from 'react-router-dom';
 import Botones from '../../components/botones/Botones';
 function ReproductorPage() {
-  //ESTO ES SOLO PARA SIMULAR UN LOGEO
-  const user = 73;
-  //ESTO ES SOLO PARA SIMULAR UN LOGEO
+  //usuario   
+  const [idUser, setIdUser] = useState("");
+  useEffect(()=>{
+      const userDataString = sessionStorage.getItem('userData');
+
+      if(userDataString){
+          const userData = JSON.parse(userDataString);
+          setIdUser(userData.id);
+      }
+  }, []);
+//
   const URL_API_media = "https://6556206a84b36e3a431f1fb4.mockapi.io/media/";
   const URL_API_Historial = "https://6557b12cbd4bcef8b613125f.mockapi.io/api/v1/historial";
   const { id } = useParams()
@@ -46,7 +54,7 @@ function ReproductorPage() {
   useEffect(() => {
     const fetchGETHistorial = async () => {
       try {
-        const getData = await fetch(URL_API_Historial + "?id_usuario=" + `${user}`);
+        const getData = await fetch(URL_API_Historial + "?id_usuario=" + `${idUser}`);
         const jsonData = await getData.json();
         setdataHistorial(jsonData);
       } catch (error) {
@@ -66,7 +74,7 @@ function ReproductorPage() {
   }, [dataHistorial,visto]);
   const guardarVisto = () => {
     const registroVisto={
-      id_usuario: user,
+      id_usuario: idUser,
       id_peliculaSerie: id,
     };
     fetch(URL_API_Historial, {
