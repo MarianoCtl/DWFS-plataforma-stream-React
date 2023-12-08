@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import "./carruselAleatorioxGenero.css";
-
+import { Link } from 'react-router-dom';
 function CarruselAleatorioxGenero({ tipo, genero }) {
   const URL_API_media = "https://6556206a84b36e3a431f1fb4.mockapi.io/media";
   const [dataxGenero, setDataxGenero] = useState([]);
@@ -35,8 +35,6 @@ function CarruselAleatorioxGenero({ tipo, genero }) {
       const primerosTresElementos = datosMezclados.slice(0, 9);
 
       setElementosAleatoriosxGenero(primerosTresElementos);
-      console.log(primerosTresElementos);
-      console.log('tipo '+tipo+' - genero '+genero);
     }
   }, [tipo, genero, dataxGenero]);
 
@@ -74,12 +72,12 @@ function CarruselAleatorioxGenero({ tipo, genero }) {
               {elementosAleatoriosxGenero.slice(slideIndex * 3, slideIndex * 3 + 3).map((elementoxGenero, indexxGenero) => (
                 <div key={indexxGenero} className='contenedor-img containerHover'>
                   <img className='media-img img-zoom' src={elementoxGenero.imagen} alt={`portada de ${elementoxGenero.titulo}`} title={elementoxGenero.tipo+' - '+elementoxGenero.id_genero} />
-                <div className="overlayHover media-img ">
+                <Link to={`/reproductor/${elementoxGenero.id}`} className="overlayHover media-img ">
                   <div className="textHover">
                     <h4 className="tituloHover">{elementoxGenero.titulo}</h4>
                     <p className="sinopsisHover">{elementoxGenero.sinopsis}</p>
                     </div>
-                </div>
+                </Link>
                 </div>
               ))}
             </div>

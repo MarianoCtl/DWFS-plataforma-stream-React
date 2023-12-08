@@ -1,0 +1,19 @@
+.centrarBtns{
+    margin-left:10%; 
+    width:50%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr ;
+    grid-template-rows:40px;
+    gap:2%;
+    margin-bottom: 10%;
+}
+.centrarBtns>button{
+    width:100%;
+    height: 30px;
+    border-radius: 10px;
+    background-color: rgb(170, 166, 166);
+}
+.textobtnmedia{
+    margin-left:10%;
+    font-weight: 700;
+}
