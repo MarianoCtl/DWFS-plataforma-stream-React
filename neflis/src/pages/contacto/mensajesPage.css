@@ -72,3 +72,8 @@
 .mr-25 {
     margin-right: 25px;
 }
+
+.d-flex-mensajes {
+    display: flex;
+    justify-content: center;
+}

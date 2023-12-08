@@ -5,27 +5,30 @@ import "./inicioPage.css";
 import '../../index.css';
 
 function InicioPage() {
-    const URL_API_generos = "https://65565a1684b36e3a431f9f30.mockapi.io/api/v1/Generos";
-    const [data, setData] = useState([]);
+  useEffect(() => {
+    document.title = 'Inicio';
+  });
+  const URL_API_generos = "https://65565a1684b36e3a431f9f30.mockapi.io/api/v1/Generos";
+  const [data, setData] = useState([]);
 
-    useEffect(() => {
-        //Trae los géneros de la API
-        const fetchData = async () => {
-            try {
-                const response = await fetch(URL_API_generos);
-                const jsonData = await response.json();
-                setData(jsonData);
-            } catch (error) {
-                console.error('Error fetch:', error);
-            }
-        };
+  useEffect(() => {
+    //Trae los géneros de la API
+    const fetchData = async () => {
+      try {
+        const response = await fetch(URL_API_generos);
+        const jsonData = await response.json();
+        setData(jsonData);
+      } catch (error) {
+        console.error('Error fetch:', error);
+      }
+    };
 
-        fetchData();
-    }, []);
+    fetchData();
+  }, []);
 
   return (
     <div className='fija-footer'>
-      <CarruselAleatorio/>
+      <CarruselAleatorio />
       <div>
         {data.map((elemento, index) => (
           <div key={index} className="contenedor-por-genero">

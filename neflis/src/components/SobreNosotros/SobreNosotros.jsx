@@ -6,7 +6,7 @@ function SobreNosotros() {
         <div className='contenedor'>
             <div className='ContenedorSobreNosotros parentSobreNosotros' >
                 <header className='bienvenidoSobreNosotros'>
-                    <h1 className='bienvenido'>Bienvenido a <img src={process.env.PUBLIC_URL + "logo.png"} alt="" /></h1>
+                    <h1 className='bienvenido'>Bienvenido a <img src={process.env.PUBLIC_URL + "img/logo.png"} alt="" /></h1>
                 </header>
 
                 <section className='sobreNosotros bordeSobreNosotros'>
@@ -50,7 +50,7 @@ function SobreNosotros() {
                         <li><strong>Joaquin Zoppi</strong></li>
                     </ul>
                 </section>
-        </div>
+            </div>
         </div>
 
     )
