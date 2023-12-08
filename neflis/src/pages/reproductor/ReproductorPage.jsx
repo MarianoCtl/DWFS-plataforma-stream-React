@@ -6,18 +6,19 @@ import Botones from '../../components/botones/Botones';
 function ReproductorPage() {
   useEffect(() => {
     document.title = 'Reproductor';
-  },[]);
-  //usuario   
-  const [idUser, setIdUser] = useState("");
-  useEffect(()=>{
-      const userDataString = sessionStorage.getItem('userData');
-
-      if(userDataString){
-          const userData = JSON.parse(userDataString);
-          setIdUser(userData.id);
-      }
   }, []);
-//
+  //usuario   
+  const [idUser, setIdUser] = useState();
+
+  useEffect(() => {
+    const userDataString = sessionStorage.getItem('userData');
+
+    if (userDataString) {
+      const userData = JSON.parse(userDataString);
+      setIdUser(userData.id);
+    }
+  }, []);
+  //
   const URL_API_media = "https://6556206a84b36e3a431f1fb4.mockapi.io/media/";
   const URL_API_Historial = "https://6557b12cbd4bcef8b613125f.mockapi.io/api/v1/historial";
   const { id } = useParams()
@@ -54,10 +55,11 @@ function ReproductorPage() {
     };
     fetchContenido();
   }, []);
+
   useEffect(() => {
     const fetchGETHistorial = async () => {
       try {
-        const getData = await fetch(URL_API_Historial + "?id_usuario=" + `${idUser}`);
+        const getData = await fetch(`${URL_API_Historial}?id_usuario=${idUser}`);
         const jsonData = await getData.json();
         setdataHistorial(jsonData);
       } catch (error) {
@@ -65,18 +67,19 @@ function ReproductorPage() {
       }
     };
     fetchGETHistorial();
-  }
-    , []);
+  }, [idUser]);
+
   useEffect(() => {
-    if (media!= undefined) {
+    if (media != undefined) {
       const verificarMedia = dataHistorial.some(item => item.id_peliculaSerie.toString() == id.toString());//si  la vio
       if (verificarMedia) {
         setVisto(true);
       }
     }
-  }, [dataHistorial,visto]);
+  }, [dataHistorial]);
+
   const guardarVisto = () => {
-    const registroVisto={
+    const registroVisto = {
       id_usuario: idUser,
       id_peliculaSerie: id,
     };
@@ -87,21 +90,21 @@ function ReproductorPage() {
       },
       body: JSON.stringify(registroVisto),//aca se agrega los cambios
     })
-      .then(response =>{
-        if(!response.ok){
-          throw new Error (
-            'Error al traer los datos'+response.status
+      .then(response => {
+        if (!response.ok) {
+          throw new Error(
+            'Error al traer los datos' + response.status
           );
-        } 
-        })
-      .then(data => 
+        }
+      })
+      .then(data =>
         window.location.reload()
       )
       .catch(error => {
         console.error('Error fetch:', error);
       });
   }
-  return(
+  return (
     <>
       <div className='infoContenido'>
         <div className='boxContenido'>

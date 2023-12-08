@@ -74,6 +74,7 @@ iframe{
     padding: 7px 20px;
     text-decoration: none;
     text-shadow: 0px -1px 0px #5b786a;
+    width: 200px;
 }
 
 .btnVisto :hover {

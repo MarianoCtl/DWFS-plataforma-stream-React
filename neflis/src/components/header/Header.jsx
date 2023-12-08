@@ -24,7 +24,7 @@ export default function Header() {
   return (
     <div className='parentHeader'>
       <div>
-        <img src={process.env.PUBLIC_URL + "img/logo.png"} alt="" className='logoHeader' />
+        <img src={process.env.PUBLIC_URL + "/img/logo.png"} alt="" className='logoHeader' />
       </div>
       <div className='inicio-Peliculas-Series'>
         {(rol === 'User' || rol == "") ? (

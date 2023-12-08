@@ -66,13 +66,10 @@ export default function ListaMedia({ tipo, genero, textoBuscar, botonPlay, boton
                 .then(response => {
                     if (!response.ok) {
                         throw new Error('Error al eliminar el elemento');
-
                     }
-                    console.log('Elemento eliminado con éxito.');
                     window.location.reload();
                     setConfirmacionVisible(null);
                 })
-
                 .catch(err => { console.log(err); });
         } catch (error) {
             console.log(error);
@@ -101,10 +98,10 @@ export default function ListaMedia({ tipo, genero, textoBuscar, botonPlay, boton
                             </div>
                             <div className='contiene-button'>
                                 <div className='tooltip'>
-                                {botonPlay&&<Link to={`/reproductor/${dato.id}`} ><button className='boton'><img src={process.env.PUBLIC_URL + '/img/play.png'} key={dato.id} ></img> <span class="tooltiptext">Reproducir</span> </button></Link>}
+                                    {botonPlay && <Link to={`/reproductor/${dato.id}`} ><button className='boton'><img src={process.env.PUBLIC_URL + '/img/play.png'} key={dato.id} ></img> <span class="tooltiptext">Reproducir</span> </button></Link>}
                                 </div>
                                 <div className='tooltip'>
-                                    {botonEditar && <Link to={`/editar/${dato.id}`}  id={dato.id}><button className='boton'><img src={process.env.PUBLIC_URL + '/img/editar.png'} key={dato.id}></img> <span className="tooltiptext">Editar</span> </button></Link>}
+                                    {botonEditar && <Link to={`/editar/${dato.id}`} id={dato.id}><button className='boton'><img src={process.env.PUBLIC_URL + '/img/editar.png'} key={dato.id}></img> <span className="tooltiptext">Editar</span> </button></Link>}
                                 </div>
                                 <div className='tooltip'>
                                     {botonEliminar && <button className='boton'><img src={process.env.PUBLIC_URL + '/img/eliminar.png'} key={dato.id} onClick={() => { filtraEliminarMedia(dato.id) }} ></img> <span className="tooltiptext">Eliminar</span> </button>}

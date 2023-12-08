@@ -6,24 +6,23 @@ function CarruselAleatorio({ tipo }) {
     const [data, setData] = useState([]);
     const [elementosAleatorios, setElementosAleatorios] = useState([]);
     const [slideIndex, setSlideIndex] = useState(1);
-//usuario   
-let btnUser=false;
-const [rol, setRol] = useState("");
-useEffect(()=>{
-    const userDataString = sessionStorage.getItem('userData');
+    //usuario   
+    let btnUser = false;
+    const [rol, setRol] = useState("");
+    useEffect(() => {
+        const userDataString = sessionStorage.getItem('userData');
 
-    if(userDataString){
-        const userData = JSON.parse(userDataString);
-        setRol(userData.rol);
+        if (userDataString) {
+            const userData = JSON.parse(userDataString);
+            setRol(userData.rol);
+        }
+    }, []);
+
+    if (rol == "User") {
+        btnUser = true;
+    } else {
+        btnUser = false;
     }
-}, []);
-
-if(rol == "User" ){
-    btnUser=true;
-}else{
-    btnUser=false;
-}
-//
     useEffect(() => {
         //Trae las películas y series de la API
         const fetchData = async () => {
@@ -92,14 +91,14 @@ if(rol == "User" ){
                 {elementosAleatorios.map((elemento, index) => (
                     <div key={index} className="mySlides fade">
                         <div className='d-flex'>
-                        {btnUser&&<Link to={`/reproductor/${elementoxGenero.id}`} className='contenedor-img'>
+                            <div className='contenedor-img'>
                                 <img className='media-img' src={elemento.imagen} alt={`portada de ${elemento.titulo}`} />
-                            </Link>}
+                            </div>
                             <div className='contenedor-info'>
                                 <div className="titulo">{elemento.titulo}</div>
                                 <div className="sinopsis">{elemento.sinopsis}</div>
                                 <div className="tipo">{elemento.tipo.toUpperCase()}</div>
-                                <button className='btn-ver sombra'>Ver</button>
+                                {btnUser && <Link to={`/reproductor/${elemento.id}`}><button className='btn-ver sombra'>Ver</button></Link>}
                             </div>
                         </div>
                     </div>
