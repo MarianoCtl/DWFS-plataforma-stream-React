@@ -83,3 +83,12 @@
     width:570px;
     border-radius: 5px;
 }
+
+.errorMensaje{
+    display: flex;
+    align-self: center;
+    font-family: Lato, sans-serif;
+    font-size: 20px;
+    font-style: italic;
+    color: yellow;
+}

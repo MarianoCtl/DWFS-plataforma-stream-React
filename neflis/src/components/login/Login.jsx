@@ -5,7 +5,8 @@ function Login() {
   const url = ("https://6555830984b36e3a431ddb6b.mockapi.io/api/users");
 
   const [userEmail, setUserEmail] = useState('');
-  const [password, setPassword] = useState(''); 
+  const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
 
   const handleLogin = async () => {
     try {
@@ -30,10 +31,10 @@ function Login() {
               window.location.href = '/';
             }
           } else {
-            console.error('Contraseña y/o Usuario incorrectos');
+            setError("Constraseña Y/O Email incorrectos")
           }
         } else {
-          console.error('Contraseña y/o Usuario incorrectos');
+          setError("Constraseña Y/O Email incorrectos")
         }
       } else {
         console.error('Error al conectar');
@@ -43,22 +44,21 @@ function Login() {
     }
   };
 
-
-
   return (
     <div className='contenedorLogin'>
-    <div className='iniciarSesion parentLogin'>
-      <h2 className='etiquetaIniciarSesion'>Iniciar sesión</h2>
-    </div>
-    <form>
-    <div className='emailPassword'>
-      <label className='etiquetaLogin' for='emailLogin' >Email</label>
-        <input type="text" name="email" className="emailLogin" value={userEmail} onChange={(e) => setUserEmail(e.target.value)}/>
-        <label className='etiquetaLogin' for='passwordLogin' >Contraseña</label>
-        <input type="password" name="password" className="passwordLogin" value={password} onChange={(e) => setPassword(e.target.value)}/>
-        <button type="button" className='btnLogin' onClick={handleLogin} >Ingresar</button>
-    </div>
-    </form>
+      <div className='iniciarSesion parentLogin'>
+        <h2 className='etiquetaIniciarSesion'>Iniciar sesión</h2>
+      </div>
+      <form>
+        <div className='emailPassword'>
+          <label className='etiquetaLogin' for='emailLogin' >Email</label>
+          <input type="text" name="email" className="emailLogin" value={userEmail} onChange={(e) => setUserEmail(e.target.value)}/>
+          <label className='etiquetaLogin' for='passwordLogin' >Contraseña</label>
+          <input type="password" name="password" className="passwordLogin" value={password} onChange={(e) => setPassword(e.target.value)}/>
+          {error && <p className='errorMensaje'>{error}</p>}
+          <button type="button" className='btnLogin' onClick={handleLogin} >Ingresar</button>
+        </div>
+      </form>
   </div>
   )
 }
