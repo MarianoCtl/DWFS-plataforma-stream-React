@@ -24,7 +24,7 @@ function RoutesList() {
           <Route path='/buscar' element={<BuscarPage/>}>Buscar</Route>
           <Route path='/contacto' element={<ContactoPage/>}>Contacto</Route>
           <Route path='/ingresar' element={<IngresarPage/>}>Ingresar</Route>
-          <Route path='/reproductor' element={<ReproductorPage/>}>Reproductor</Route>
+          <Route path='/reproductor/:id' element={<ReproductorPage/>}>Reproductor</Route>
           <Route path='/series' element={<SeriesPage/>}>Series</Route>
           <Route path='/sobre-nosotros' element={<SobreNosotrosPage/>}>Sobre nosotros</Route>
           <Route path='/admin' element={<InicioAdminPage/>}>Inicio administración</Route>
