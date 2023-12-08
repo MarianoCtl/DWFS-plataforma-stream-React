@@ -4,6 +4,9 @@ import './reproductor.css'
 import { Link } from 'react-router-dom';
 import Botones from '../../components/botones/Botones';
 function ReproductorPage() {
+  useEffect(() => {
+    document.title = 'Reproductor';
+  },[]);
   //usuario   
   const [idUser, setIdUser] = useState("");
   useEffect(()=>{

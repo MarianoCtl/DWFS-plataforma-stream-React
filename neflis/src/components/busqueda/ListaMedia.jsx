@@ -101,13 +101,13 @@ export default function ListaMedia({ tipo, genero, textoBuscar, botonPlay, boton
                             </div>
                             <div className='contiene-button'>
                                 <div className='tooltip'>
-                                {botonPlay&&<Link to={`/reproductor/${dato.id}`} ><button className='boton'><img src={process.env.PUBLIC_URL + '/play.png'} key={dato.id} ></img> <span class="tooltiptext">Reproducir</span> </button></Link>}
+                                {botonPlay&&<Link to={`/reproductor/${dato.id}`} ><button className='boton'><img src={process.env.PUBLIC_URL + '/img/play.png'} key={dato.id} ></img> <span class="tooltiptext">Reproducir</span> </button></Link>}
                                 </div>
                                 <div className='tooltip'>
-                                    {botonEditar && <Link to={`/editar/${dato.id}`}  id={dato.id}><button className='boton'><img src={process.env.PUBLIC_URL + '/editar.png'} key={dato.id}></img> <span className="tooltiptext">Editar</span> </button></Link>}
+                                    {botonEditar && <Link to={`/editar/${dato.id}`}  id={dato.id}><button className='boton'><img src={process.env.PUBLIC_URL + '/img/editar.png'} key={dato.id}></img> <span className="tooltiptext">Editar</span> </button></Link>}
                                 </div>
                                 <div className='tooltip'>
-                                    {botonEliminar && <button className='boton'><img src={process.env.PUBLIC_URL + '/eliminar.png'} key={dato.id} onClick={() => { filtraEliminarMedia(dato.id) }} ></img> <span className="tooltiptext">Eliminar</span> </button>}
+                                    {botonEliminar && <button className='boton'><img src={process.env.PUBLIC_URL + '/img/eliminar.png'} key={dato.id} onClick={() => { filtraEliminarMedia(dato.id) }} ></img> <span className="tooltiptext">Eliminar</span> </button>}
                                 </div>
                             </div>
                         </div>
