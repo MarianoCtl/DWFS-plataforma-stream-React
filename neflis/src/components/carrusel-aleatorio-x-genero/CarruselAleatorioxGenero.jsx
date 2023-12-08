@@ -6,24 +6,24 @@ function CarruselAleatorioxGenero({ tipo, genero }) {
   const [dataxGenero, setDataxGenero] = useState([]);
   const [elementosAleatoriosxGenero, setElementosAleatoriosxGenero] = useState([]);
   const [slideIndexxGenero, setSlideIndexxGenero] = useState(1);
-//usuario   
-    let btnUser=false;
-    const [rol, setRol] = useState("");
-    useEffect(()=>{
-        const userDataString = sessionStorage.getItem('userData');
-  
-        if(userDataString){
-            const userData = JSON.parse(userDataString);
-            setRol(userData.rol);
-        }
-    }, []);
+  //usuario   
+  let btnUser = false;
+  const [rol, setRol] = useState("");
+  useEffect(() => {
+    const userDataString = sessionStorage.getItem('userData');
 
-    if(rol == "User" ){
-        btnUser=true;
-    }else{
-        btnUser=false;
+    if (userDataString) {
+      const userData = JSON.parse(userDataString);
+      setRol(userData.rol);
     }
-//
+  }, []);
+
+  if (rol == "User") {
+    btnUser = true;
+  } else {
+    btnUser = false;
+  }
+  
   useEffect(() => {
     const fetchDataxGenero = async () => {
       try {
@@ -52,8 +52,6 @@ function CarruselAleatorioxGenero({ tipo, genero }) {
       const primerosTresElementos = datosMezclados.slice(0, 9);
 
       setElementosAleatoriosxGenero(primerosTresElementos);
-      console.log(primerosTresElementos);
-      console.log('tipo '+tipo+' - genero '+genero);
     }
   }, [tipo, genero, dataxGenero]);
 
@@ -90,13 +88,22 @@ function CarruselAleatorioxGenero({ tipo, genero }) {
             <div className='d-flex'>
               {elementosAleatoriosxGenero.slice(slideIndex * 3, slideIndex * 3 + 3).map((elementoxGenero, indexxGenero) => (
                 <div key={indexxGenero} className='contenedor-img containerHover'>
-                  <img className='media-img img-zoom' src={elementoxGenero.imagen} alt={`portada de ${elementoxGenero.titulo}`} title={elementoxGenero.tipo+' - '+elementoxGenero.id_genero} />
-                  {btnUser&&<Link to={`/reproductor/${elementoxGenero.id}`} className="overlayHover media-img ">
-                  <div className="textHover">
-                    <h4 className="tituloHover">{elementoxGenero.titulo}</h4>
-                    <p className="sinopsisHover">{elementoxGenero.sinopsis}</p>
-                  </div>
-                </Link>}
+                  <img className='media-img img-zoom' src={elementoxGenero.imagen} alt={`portada de ${elementoxGenero.titulo}`} title={elementoxGenero.tipo + ' - ' + elementoxGenero.id_genero} />
+                  {btnUser ? (<Link to={`/reproductor/${elementoxGenero.id}`} className="overlayHover media-img ">
+                    <div className="textHover">
+                      <h4 className="tituloHover">{elementoxGenero.titulo}</h4>
+                      <p className="sinopsisHover">{elementoxGenero.sinopsis}</p>
+                    </div>
+                  </Link>
+                  ) : (
+                    <>
+                      <div className="overlayHover media-img ">
+                        <div className="textHover">
+                          <h4 className="tituloHover">{elementoxGenero.titulo}</h4>
+                          <p className="sinopsisHover">{elementoxGenero.sinopsis}</p>
+                        </div>
+                      </div>
+                    </>)}
                 </div>
               ))}
             </div>
