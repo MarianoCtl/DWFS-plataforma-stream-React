@@ -78,14 +78,14 @@ export default function ListaMedia({ tipo, genero, textoBuscar, botonPlay, boton
 
     return (
         <div className='contiene-lista'>
-            <ul>
+            <ul className='grilla-media scroll'>
                 {mediaFiltrada.map((dato) => (
                     <li className='titulo-dato' key={dato.id}>
                         <div className='contiene-dato sombra'>
                             <img className='imagen-dato' src={dato.imagen} />
                             <div className='contiene-titulo-sinopsis' >
                                 <p className='titulo'>{dato.titulo} <span className='tipo'>({dato.tipo})</span> </p>
-                                <p >{dato.sinopsis}</p>
+                                <p className='sinopsis-css'>{dato.sinopsis}</p>
                                 <div>
                                     {confirmacionVisible && (
                                         <div className="modal">
@@ -98,7 +98,7 @@ export default function ListaMedia({ tipo, genero, textoBuscar, botonPlay, boton
                             </div>
                             <div className='contiene-button'>
                                 <div className='tooltip'>
-                                    {botonPlay && <Link to={`/reproductor/${dato.id}`} ><button className='boton'><img src={process.env.PUBLIC_URL + '/img/play.png'} key={dato.id} ></img> <span class="tooltiptext">Reproducir</span> </button></Link>}
+                                    {botonPlay && <Link to={`/reproductor/${dato.id}`} ><button className='boton'><img className='play-cssResponsive' src={process.env.PUBLIC_URL + '/img/play.png'} key={dato.id} ></img> <span class="tooltiptext">Reproducir</span> </button></Link>}
                                 </div>
                                 <div className='tooltip'>
                                     {botonEditar && <Link to={`/editar/${dato.id}`} id={dato.id}><button className='boton'><img src={process.env.PUBLIC_URL + '/img/editar.png'} key={dato.id}></img> <span className="tooltiptext">Editar</span> </button></Link>}

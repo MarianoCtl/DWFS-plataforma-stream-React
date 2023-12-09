@@ -72,3 +72,94 @@
     justify-content: center;
     
 }
+.nav-icono-responsive,.logoHeaderResponsive{
+  display: none;
+}
+@media screen and (max-width: 400px){
+  .scroll{
+    height:450px;
+    overflow-x: scroll; 
+  }
+  .contiene-dato {
+    width:100px;
+  }
+  .logoHeaderResponsive{
+    display: block;
+    width:42px;
+    height:42px ;
+  }
+  .nav-icono-responsive{
+    display: block;
+    width:54px;
+    height: 54px;
+    margin-left:40%;
+  }
+  .nav-icono-responsive>img{
+    width: 100%;
+  }
+  /*BUSCADOR*/
+  .titulo-texto-buscar,.buscadorResponsive,.logoHeader{
+    display: none;
+  }
+  .contiene-buscador{
+    width:100%;
+  }
+  .contiene-input{
+    margin-left: 2%;
+    width: 100%;
+    height:80px;
+    display: grid!important;
+    grid-template-columns:50% 30% 10%;
+  }
+.seleccion{
+    width:100%!important;
+  }
+  .texto-buscar{
+    width:120%!important;
+  }
+  .lupa-cssResponsive{
+    margin-left:30%;
+    
+  }
+  .refresh-cssResponsive{
+    margin-left:-100% ;
+  }
+  /*GRILLA*/
+  .contiene-button{
+    margin-top:40px;
+    height:50px;
+  }
+    .sinopsis-css{
+        display: none;
+    }
+  .grilla-media{
+    margin-left:-8%;
+    width: 100%;
+    display: grid;
+    grid-template-columns:30% 30% 30%;
+    gap:2%;
+  }
+  .contiene-dato{
+    width:100%;
+    height: 100px;
+  }
+  .titulo-dato{
+    height:100px;
+    width:100%;
+  }
+  .imagen-dato{
+    width:450%;
+    height:90%;
+  }
+  .titulo{
+    display: none;
+  }
+  .contiene-button{
+    position: relative;
+    left:-200%;
+  }
+  .play-cssResponsive{
+    background-color: rgba(0, 141, 0, 0.849); 
+   border-radius: 50%;
+  }
+}

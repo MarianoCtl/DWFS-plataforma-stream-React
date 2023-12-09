@@ -84,3 +84,36 @@
     position: relative;
     top: 2px;
 }
+#menuCss{
+    display: none;
+}
+@media screen and (max-width: 400px){
+    .parentHeader{
+        background-color: #000000;
+    }
+    .nombreCss{
+        display: block;
+        position: absolute;
+        background-color: red;
+        z-index: 10;
+        width: 100%;
+    }
+    #menuCss{
+        position: absolute;
+        display:block;
+        z-index: 6;
+        background-color: rgb(1, 1, 12);
+        width:100%;
+        top:52px;
+        height:60%;
+    }
+    .inicio-Peliculas-Series,.btnResponsiveCss{
+        display: none;
+    }
+    p.separarInicio{
+        font-size:30px;
+    }
+    .nomberResponsive{
+        font-size: 20px;
+    }
+}
