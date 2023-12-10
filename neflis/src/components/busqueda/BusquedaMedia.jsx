@@ -60,10 +60,10 @@ export default function BusquedaMedia({ btnUser, btnAdmin, tipo, genero }) {
             </select>
             <input type="text" className = 'texto-buscar' placeholder="Ingrese pelicula o serie a buscar" onChange={SetearTextoBuscar} />
                 <div className="tooltip">
-                <button className="button-lupa-refresh" ><img src={process.env.PUBLIC_URL + '/img/buscar.png'} onClick={buscarTexto} ></img> <span className="tooltiptext">Buscar</span></button>
+                <button className="button-lupa-refresh" ><img src={process.env.PUBLIC_URL + 'img/buscar.png'} onClick={buscarTexto} ></img> <span className="tooltiptext">Buscar</span></button>
                 </div>
                 <div className="tooltip">
-                <button className="button-lupa-refresh" ><img src={process.env.PUBLIC_URL + '/img/actualizar.png'} onClick={()=>window.location.reload()} ></img> <span className="tooltiptext">Actualizar</span> </button>
+                <button className="button-lupa-refresh" ><img src={process.env.PUBLIC_URL + 'img/actualizar.png'} onClick={()=>window.location.reload()} ></img> <span className="tooltiptext">Actualizar</span> </button>
                 </div>                
             </div>
             </div>
