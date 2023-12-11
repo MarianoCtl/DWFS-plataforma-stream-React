@@ -22,7 +22,7 @@ Para el funcionamiento del proyecto, generamos diferentes APIs:
 - API de géneros: [Enlace](https://65565a1684b36e3a431f9f30.mockapi.io/api/v1/Generos)
 - API de usuarios: [Enlace](https://6555830984b36e3a431ddb6b.mockapi.io/api/users)
 - API de contacto: [Enlace](https://6556cdfabd4bcef8b611a1c2.mockapi.io/Api/contacto)
-- API de historial: [Enlace](6557b12cbd4bcef8b613125f.mockapi.io/api/v1/historial)
+- API de historial: [Enlace](https://6557b12cbd4bcef8b613125f.mockapi.io/api/v1/historial)
 
 #### Uso del proyecto:
 En la **Página Principal**, se presenta un listado aleatorio del contenido disponible en el sitio. Puede explorar el contenido a través de carruseles y participar de forma interactiva. Es importante destacar que la visualización de películas o series requiere autenticación; por lo tanto, es necesario estar logueado como usuario para acceder a este contenido.
