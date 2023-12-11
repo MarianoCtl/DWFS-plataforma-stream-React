@@ -129,9 +129,9 @@ function ReproductorPage() {
         </div>
       </div>
       <div className='reproductorMedia'>
-        <div>
-          <p id="textMedia">{media.tipo == "serie" ? "Episodio 1 Temporada 1" : ""}</p>
-          <iframe id='video' width="560" height="315" src="https://www.youtube.com/embed/JQ6XNQFrGlk?si=lZsJ-vbKOmriMk0l?controls=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        <div className='contenedor-video'>
+          <h4 id="textMedia">{media.tipo == "serie" ? "Episodio 1 Temporada 1" : ""}</h4>
+          <iframe id='video' width="1000" height="562" src="https://www.youtube.com/embed/JQ6XNQFrGlk?si=lZsJ-vbKOmriMk0l?controls=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
         </div>
         {media.tipo == "serie" ? <Botones /> : ""}
       </div>

@@ -3,7 +3,7 @@ import CarruselAleatorio from '../../components/carrusel-aleatorio/CarruselAleat
 import CarruselAleatorioxGenero from '../../components/carrusel-aleatorio-x-genero/CarruselAleatorioxGenero';
 import "../inicio/inicioPage.css";
 import { Link } from 'react-router-dom';
-import '../../index.css';
+import './peliculasPage.css';
 
 function PeliculasPage() {
   useEffect(() => {
@@ -32,7 +32,7 @@ function PeliculasPage() {
       <div>
         {data.map((elemento, index) => (
           <div key={index} className="contenedor-por-genero">
-            <h3 className="genero">Películas de {elemento.Generos}<Link to={`/media/pelicula/${elemento.id}`}>Ver mas...</Link></h3>
+            <h3 className="genero">Películas de {elemento.Generos} - <Link to={`/media/pelicula/${elemento.id}`} className='link-ver-mas'>Ver mas...</Link></h3>
             {data.length > 0 && <CarruselAleatorioxGenero tipo={"peliculas"} key={elemento.id} genero={elemento.id} />}
           </div>
         ))}
