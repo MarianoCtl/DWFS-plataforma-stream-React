@@ -1,119 +1,175 @@
-.parentHeader {
-    display: grid;
-    grid-template-columns: 10% 60% 30%;
-    grid-template-rows: 100%;
-    grid-column-gap: 0px;
-    grid-row-gap: 0px;
-    background-color: #212529;
-    margin-bottom: 1%;
-    height: 60px;
-    box-shadow: 2px 5px 5px 0px rgba(46, 70, 121, 0.75);
+@media screen and (min-width: 401px) {
+    .parentHeader {
+        display: grid;
+        grid-template-columns: 10% 60% 30%;
+        grid-template-rows: 100%;
+        grid-column-gap: 0px;
+        grid-row-gap: 0px;
+        background-color: #212529;
+        margin-bottom: 1%;
+        height: 60px;
+        box-shadow: 2px 5px 5px 0px rgba(46, 70, 121, 0.75);
+    }
+
+    .efectoLink {
+        text-decoration: none;
+        color: whitesmoke;
+        transition: all .5s ease;
+    }
+
+    .logoHeader {
+        display: flex;
+        width: 168px;
+        height: 63px;
+    }
+
+    .efectoLink:hover {
+        color: aquamarine;
+        padding-left: 10px;
+        padding-right: 10px;
+        border-bottom: 2px solid aquamarine;
+    }
+
+    .inicio-Peliculas-Series {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        padding-right: 75%;
+    }
+
+    .separarInicio {
+        display: flex;
+        justify-content: center;
+        padding-left: 10%;
+        transition: all .5s ease;
+
+    }
+
+    .separarInicio:hover {
+        scale: 1.1;
+    }
+
+    .buscador-Ingresar {
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        padding-left: 30%;
+    }
+
+    .tamanioHeader {
+        font-size: 24px;
+    }
+
+    .btnIngresar {
+        margin-top: 20px;
+        margin-left: 12px;
+        margin-bottom: 15px;
+        background-color: #82bcca;
+        border-radius: 5px;
+        border: 1px solid #2e4679;
+        display: inline-block;
+        cursor: pointer;
+        color: #ffffff;
+        font-size: 15px;
+        font-weight: bold;
+        padding: 10px 30px;
+        text-decoration: none;
+        text-shadow: 0px -1px 0px #5b6178;
+    }
+
+    .btnIngresar:hover {
+        background-color: #4b8aa5;
+    }
+
+    .btnIngresar:active {
+        position: relative;
+        top: 2px;
+    }
+
+    #menuCss {
+        display: none;
+    }
+    .nav-icono-responsive,.logoHeaderResponsive{
+      display: none;
+    }
 }
 
-.efectoLink {
-    text-decoration: none;
-    color: whitesmoke;
-    transition: all .5s ease;
-}
 
-.logoHeader {
-    display: flex;
-    width: 168px;
-    height: 63px;
-}
-
-.efectoLink:hover {
-    color: aquamarine;
-    padding-left: 10px;
-    padding-right: 10px;
-    border-bottom: 2px solid aquamarine;
-}
-
-.inicio-Peliculas-Series {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    padding-right: 75%;
-}
-
-.separarInicio {
-    display: flex;
-    justify-content: center;
-    padding-left: 10%;
-    transition: all .5s ease;
-
-}
-
-.separarInicio:hover {
-    scale: 1.1;
-}
-
-.buscador-Ingresar {
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    padding-left: 30%;
-}
-
-.tamanioHeader {
-    font-size: 1.3vw;
-}
-
-.btnIngresar {
-    margin-top: 20px;
-    margin-left: 12px;
-    margin-bottom: 15px;
-    background-color: #82bcca;
-    border-radius: 5px;
-    border: 1px solid #2e4679;
-    display: inline-block;
-    cursor: pointer;
-    color: #ffffff;
-    font-size: 15px;
-    font-weight: bold;
-    padding: 10px 30px;
-    text-decoration: none;
-    text-shadow: 0px -1px 0px #5b6178;
-}
-
-.btnIngresar:hover {
-    background-color: #4b8aa5;
-}
-
-.btnIngresar:active {
-    position: relative;
-    top: 2px;
-}
-#menuCss{
-    display: none;
-}
-@media screen and (max-width: 400px){
-    .parentHeader{
+/* PANTALLAS MOBILES */
+@media screen and (max-width: 400px) {
+    .parentHeader {
         background-color: #000000;
     }
-    .nombreCss{
+
+    .nombreCss {
         display: block;
         position: absolute;
         background-color: red;
         z-index: 10;
         width: 100%;
     }
-    #menuCss{
+
+    #menuCss {
         position: absolute;
-        display:block;
+        display: block;
         z-index: 6;
         background-color: rgb(1, 1, 12);
-        width:100%;
-        top:52px;
-        height:60%;
+        width: 100%;
+        top: 52px;
     }
-    .inicio-Peliculas-Series,.btnResponsiveCss{
+
+    .inicio-Peliculas-Series,
+    .btnResponsiveCss {
         display: none;
     }
-    p.separarInicio{
-        font-size:30px;
+
+    p.separarInicio {
+        margin-left: 10px;
+        font-size: 24px;
     }
-    .nomberResponsive{
+
+    .nomberResponsive {
         font-size: 20px;
+    }
+    .logoHeaderResponsive{
+      display: block;
+      width:42px;
+      height:42px ;
+    }
+    .nav-icono-responsive{
+      display: block;
+      width:54px;
+      height: 54px;
+      float: right;
+    }
+    .nav-icono-responsive>img{
+      width: 100%;
+    }
+    
+    .btnIngresar {
+        background-color: #82bcca;
+        border-radius: 5px;
+        border: 1px solid #2e4679;
+        display: inline-block;
+        cursor: pointer;
+        color: #ffffff;
+        font-size: 15px;
+        font-weight: bold;
+        padding: 7px 20px;
+        text-decoration: none;
+        text-shadow: 0px -1px 0px #5b6178;
+    }
+
+    .btnIngresar:hover {
+        background-color: #4b8aa5;
+    }
+
+    .btnIngresar:active {
+        position: relative;
+        top: 2px;
+    }
+
+    .d-responsive-none {
+        display: none;
     }
 }

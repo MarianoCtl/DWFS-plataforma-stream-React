@@ -5,15 +5,8 @@ import { Link } from "react-router-dom";
 export default function Header() {
   const [nombre, setNombre] = useState();
   const [rol, setRol] = useState("");
-  //Menu
-  function menu() {
-    var x = document.getElementById("menuCss");
-    if (x.style.display === "block") {
-      x.style.display = "none";
-    } else {
-      x.style.display = "block";
-    }
-  }
+  const [menuVisible, setMenuVisible] = useState(false);
+  
   useEffect(() => {
     const userDataString = sessionStorage.getItem('userData');
 
@@ -24,6 +17,10 @@ export default function Header() {
     }
   }, []);
 
+  const toggleMenu = () => {
+    setMenuVisible(!menuVisible);
+  };
+
   const terminarSesion = () => {
     sessionStorage.removeItem('userData');
     window.location.href = '/';
@@ -31,10 +28,11 @@ export default function Header() {
 
   return (
     <div className='parentHeader'>
-      <div>
-        <img src={process.env.PUBLIC_URL + "/img/logo.png"} alt="" className='logoHeader' />
+    <div className='nav-icono-responsive'>
+      <img src={process.env.PUBLIC_URL + '/img/logoNav.jpg'} onClick={toggleMenu}/>
+    </div>
+        <img src={process.env.PUBLIC_URL + "/img/logo.png"} alt="" className='logoHeader d-responsive-none' />
         <img src={process.env.PUBLIC_URL + "/img/icono.png"} alt="" className='logoHeaderResponsive' />
-      </div>
       <div className='inicio-Peliculas-Series'>
         {(rol === 'User' || rol == "") ? (
           <>
@@ -48,39 +46,46 @@ export default function Header() {
           </>
         )}
       </div>
-      <div id='menuCss'>
+      <div id='menuCss' style={{ display: menuVisible ? 'block' : 'none' }}>
         {(rol === 'User' || rol == "") ? (
           <>
-            <p className='separarInicio tamanioHeader'>{<Link to="/" className='efectoLink'>Inicio</Link>}</p>
-            <p className='separarInicio tamanioHeader'>{<Link to="/peliculas" className='efectoLink'>Peliculas</Link>}</p>
-            <p className='separarInicio tamanioHeader'>{<Link to="/series" className='efectoLink'>Series</Link>}</p>
-            <p className='separarInicio tamanioHeader'>{<Link to="/ingresar"><button type="button" className='btnIngresar' onClick={terminarSesion}>Salir</button></Link>}</p>
+            <p className='separarInicio tamanioHeader'>{<Link to="/" className='efectoLink' onClick={toggleMenu}>Inicio</Link>}</p>
+            <p className='separarInicio tamanioHeader'>{<Link to="/peliculas" className='efectoLink' onClick={toggleMenu}>Peliculas</Link>}</p>
+            <p className='separarInicio tamanioHeader'>{<Link to="/series" className='efectoLink' onClick={toggleMenu}>Series</Link>}</p>
+            <p className='separarInicio tamanioHeader'>{<Link to="/buscar" className='efectoLink' onClick={toggleMenu}>Buscador</Link>}</p>
           </>
         ) : (
           <>
-            <p className='separarInicio tamanioHeader'>{<Link to="/admin" className='efectoLink'>Inicio</Link>}</p>
+            <p className='separarInicio tamanioHeader'>{<Link to="/admin" className='efectoLink' onClick={toggleMenu}>Inicio</Link>}</p>
+          </>
+        )}
+        {rol == "" ? (
+          <>
+            <p className='separarInicio tamanioHeader'>{<Link to="/ingresar"><button type="button" className='btnIngresar' onClick={toggleMenu}>Ingresar</button></Link>}</p>
+          </>
+        ) : (
+          <>
+            <p className='separarInicio tamanioHeader nomberResponsive'>{nombre}</p>
+            <p className='separarInicio tamanioHeader'>{<Link to="/ingresar"><button type="button" className='btnIngresar btnResponsiveCss' onClick={terminarSesion}>Salir</button></Link>}</p>
           </>
         )}
       </div>
       <div className='buscador-Ingresar'>
         {(rol === 'User' || rol == "") && (
           <>
-            <p className='tamanioHeader buscadorResponsive'>{<Link to="/buscar" className='efectoLink'>Buscador</Link>}</p>
+            <p className='tamanioHeader buscadorResponsive d-responsive-none'>{<Link to="/buscar" className='efectoLink'>Buscador</Link>}</p>
           </>
         )}
-        <p className='tamanioHeader nomberResponsive'>{nombre}</p>
+        <p className='tamanioHeader nomberResponsive d-responsive-none'>{nombre}</p>
         {rol == "" ? (
           <>
-            {<Link to="/ingresar"><button type="button" className='btnIngresar'>Ingresar</button></Link>}
+            {<Link to="/ingresar"><button type="button" className='btnIngresar d-responsive-none'>Ingresar</button></Link>}
           </>
         ) : (
           <>
-            {<Link to="/ingresar"><button type="button" className='btnIngresar btnResponsiveCss' onClick={terminarSesion}>Salir</button></Link>}
+            {<Link to="/ingresar"><button type="button" className='btnIngresar btnResponsiveCss  d-responsive-none' onClick={terminarSesion}>Salir</button></Link>}
           </>
         )}
-      </div>
-      <div className='nav-icono-responsive'>
-        <img src={process.env.PUBLIC_URL + '/img/logoNav.jpg'} onClick={menu}/>
       </div>
     </div>
   )

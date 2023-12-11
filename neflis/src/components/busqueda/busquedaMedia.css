@@ -30,5 +30,24 @@ align-items: center;
     cursor: pointer;
 }
 
-
+/* PANTALLAS MOBILES */
+@media screen and (max-width: 400px) {
+    .contiene-buscador{
+        display: flex;
+        flex-direction: column;
+        }
+    .contiene-input{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+    .titulo-texto-buscar{
+        font-size: 20px;
+        margin: 5px;
+    }
+    .iconos-flex{
+        display: flex;
+        justify-content: center;
+    }
+}
 

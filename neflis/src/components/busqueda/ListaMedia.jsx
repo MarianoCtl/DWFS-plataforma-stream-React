@@ -90,8 +90,8 @@ export default function ListaMedia({ tipo, genero, textoBuscar, botonPlay, boton
                                     {confirmacionVisible && (
                                         <div className="modal">
                                             <p>¿Estás seguro de que deseas eliminar?</p>
-                                            <button className='boton tooltip' ><img src={process.env.PUBLIC_URL + 'si.png'} key={dato.id} onClick={() => { enviarSolicitudEliminacion(dato.id) }}></img><span className="tooltiptext">Sí</span></button>
-                                            <button className='boton tooltip'><img src={process.env.PUBLIC_URL + 'no.png'} key={dato.id} onClick={ocultarConfirmacion}></img><span className="tooltiptext">No</span></button>
+                                            <button className='boton tooltip' ><img src={process.env.PUBLIC_URL + '/img/si.png'} key={dato.id} onClick={() => { enviarSolicitudEliminacion(dato.id) }}></img><span className="tooltiptext">Sí</span></button>
+                                            <button className='boton tooltip'><img src={process.env.PUBLIC_URL + '/img/no.png'} key={dato.id} onClick={ocultarConfirmacion}></img><span className="tooltiptext">No</span></button>
                                         </div>
                                     )}
                                 </div>
