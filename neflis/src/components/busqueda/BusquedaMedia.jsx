@@ -58,12 +58,13 @@ export default function BusquedaMedia({ btnUser, btnAdmin, tipo, genero }) {
                 <option value={3}>Romance</option>
                 <option value={4}>Comedia</option>
             </select>
+            <div className="espacio_cssResponsive"></div>
             <input type="text" className = 'texto-buscar' placeholder="Ingrese pelicula o serie a buscar" onChange={SetearTextoBuscar} />
-                <div className="tooltip">
-                <button className="button-lupa-refresh" ><img src={process.env.PUBLIC_URL + 'img/buscar.png'} onClick={buscarTexto} ></img> <span className="tooltiptext">Buscar</span></button>
+                <div className="tooltip lupa-cssResponsive">
+                <button className="button-lupa-refresh" ><img src={process.env.PUBLIC_URL + '/img/buscar.png'} onClick={buscarTexto} ></img> <span className="tooltiptext">Buscar</span></button>
                 </div>
-                <div className="tooltip">
-                <button className="button-lupa-refresh" ><img src={process.env.PUBLIC_URL + 'img/actualizar.png'} onClick={()=>window.location.reload()} ></img> <span className="tooltiptext">Actualizar</span> </button>
+                <div className="tooltip refresh-cssResponsive">
+                <button className="button-lupa-refresh" ><img src={process.env.PUBLIC_URL + '/img/actualizar.png'} onClick={()=>window.location.reload()} ></img> <span className="tooltiptext">Actualizar</span> </button>
                 </div>                
             </div>
             </div>
