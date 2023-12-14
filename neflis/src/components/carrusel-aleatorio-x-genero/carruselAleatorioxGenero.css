@@ -20,8 +20,9 @@
 }
 
 .media-img {
+  display: block;
   width: 100%;
-  height: 100%;
+  height: auto;
   max-width: 300px;
   max-height: 300px;
   min-width: 100px;
@@ -36,7 +37,7 @@
 }
 
 .img-zoom:hover {
-  transform: scale(1.05);
+  transform: scale(1.01);
 }
 
 /* Slideshow container */
@@ -165,6 +166,49 @@
   animation-duration: 1.5s;
 }
 
+
+/* Hover cortina  */
+.containerHover {
+  position: relative;
+  display: flex;
+  justify-content: center;
+
+  
+}
+
+.overlayHover {
+  position: absolute;
+  bottom: 0;
+  background-color: #000000;
+  overflow: hidden;
+  border-radius: 25px;
+  width:100%;
+  height: 0;
+  transition: .5s ease;
+  opacity:92%;
+  min-height: 0%;
+}
+
+.contenedor-img:hover .overlayHover {
+  height: 100%;
+  cursor: pointer;
+}
+
+.textHover {
+  color: white;
+  font-size: 20px;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  position: absolute;
+  top: 50%;
+  left:35%;
+  text-align: center;
+}
+.tituloHover,.sinopsisHover{
+  width: 150%;
+  text-align:center;
+}
 @keyframes fade {
   from {opacity: .4} 
   to {opacity: 1}

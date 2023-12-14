@@ -1,9 +1,13 @@
-import React from 'react'
+import React, { useEffect } from 'react';
 import SobreNosotros from '../../components/SobreNosotros/SobreNosotros';
+import '../../index.css';
 
 function SobreNosotrosPage() {
+  useEffect(() => {
+    document.title = 'Sobre nosotros';
+  });
   return (
-    <div>
+    <div className='fija-footer'>
       <SobreNosotros />
     </div>
   )

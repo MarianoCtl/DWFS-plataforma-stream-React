@@ -1,49 +1,133 @@
-
 .contiene-dato {
-    display: grid;
-    grid-template-columns: 20% 60% 20%;
-    grid-template-rows: 100%;
-    grid-column-gap: 0px;
-    grid-row-gap: 0px;
-    border: 1px solid white;
-    border-radius: 10px;
-    margin-right:20px;
+  display: grid;
+  grid-template-columns: 20% 60% 20%;
+  grid-template-rows: 100%;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  border: 1px solid whitesmoke;
+  border-radius: 10px;
+  margin-right: 20px;
 }
 
-.contiene-titulo-sinopsis{
-    display: flex;
-    flex-direction:column;
+.contiene-dato:hover {
+  background-color: #212529;
 }
-.titulo-dato, h1{
-    list-style: none;
-    color: whitesmoke;
+
+.contiene-titulo-sinopsis {
+  display: flex;
+  flex-direction: column;
 }
-.imagen-dato{
-    width: 150px;
-    height: 150px;
+
+.titulo-dato {
+  list-style: none;
+  color: whitesmoke;
+  margin-bottom: 10px;
 }
-.contiene-button{
-   display: flex;
-   justify-content: center;
-   align-items: center;
+
+.imagen-dato {
+  width: 150px;
+  height: 150px;
+  margin: 5px;
+  border-radius: 5px;
 }
-.titulo{
-    font-size: 1.5rem;
+
+.contiene-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.boton{
-    background-color: transparent;
-    border: 1px solid #000; 
-    color: #000; 
-    padding: 10px 20px;
-    cursor: pointer;
+
+.titulo {
+  font-size: 1.5rem;
+}
+
+.boton {
+  background-color: transparent;
+  border: 0px;
+  color: #000;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.boton:hover {
+  scale: 1.1;
+}
+
+.reproducir {
+  display: block;
+}
+
+.ver {
+  display: block;
+}
+
+.tipo {
+  color: whitesmoke;
+  font-size: 0.8rem;
+}
+
+.modal {
+  display: flex;
+  justify-content: center;
+
+}
+
+@media screen and (max-width: 400px) {
+  .scroll {
+    height: 470px;
+    overflow-x: scroll;
   }
-.reproducir{
-    display: block;
-}
-.ver{
-    display:block;
-}
-.tipo{
-    color: whitesmoke;
-    font-size: 0.8rem;
+
+  .contiene-dato {
+    width: 100px;
+  }
+
+  /*GRILLA*/
+  .contiene-button {
+    margin-top: 40px;
+    height: 50px;
+  }
+
+  .sinopsis-css {
+    display: none;
+  }
+
+  .grilla-media {
+    margin-left: -8%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 30% 30% 30%;
+    gap: 2%;
+  }
+
+  .contiene-dato {
+    width: 100%;
+    height: 100px;
+  }
+
+  .titulo-dato {
+    height: 100px;
+    width: 100%;
+  }
+
+  .imagen-dato {
+    width: 450%;
+    height: 90%;
+  }
+
+  .titulo {
+    display: none;
+  }
+
+  .contiene-button {
+    position: relative;
+    left: -200%;
+  }
+
+  .play-cssResponsive {
+    background-color: rgba(0, 141, 0, 0.849);
+    border-radius: 50%;
+  }
+
 }
